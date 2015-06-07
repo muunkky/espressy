@@ -1,0 +1,65 @@
+    <ul class="list-group" style="margin:0;">
+      <li class="list-group-item star-header"><h4><span class="glyphicon glyphicon-star"/><span class="glyphicon glyphicon-star"/><span class="glyphicon glyphicon-star"/> Three Star</h4></li>
+      <ul class="list-group" style="margin:0;">
+      <?php 
+      if(!isset($city_cafes[3])||empty($city_cafes[3])){?>
+        <li class="list-group-item"><h2>None</h2></li>
+      <?php }else{
+        foreach($city_cafes[3] as $cafe){
+          $this->load->view("list/cafe",array("cafe"=>$cafe,"reviewer"=>$reviewer,"stars"=>3));
+        }
+      }?>
+      </ul>
+    </ul>
+    <ul class="list-group" style="margin:0;">
+      <li class="list-group-item star-header"><h4><span class="glyphicon glyphicon-star"/><span class="glyphicon glyphicon-star"/> Two Star</h4></li>
+      <ul class="list-group" style="margin:0;">
+      <?php 
+      if(!isset($city_cafes[2])||empty($city_cafes[2])){?>
+        <li class="list-group-item"><h2>None</h2></li>
+      <?php }else{
+         foreach($city_cafes[2] as $cafe){
+           $this->load->view("list/cafe",array("cafe"=>$cafe,"reviewer"=>$reviewer,"stars"=>2));
+        }
+      }?>
+      </ul>
+    </ul>
+    <ul class="list-group" style="margin:0;">
+      <li class="list-group-item star-header"><h4><span class="glyphicon glyphicon-star"/> One Star</h4></li>
+      <ul class="list-group" style="margin:0;">
+      <?php 
+      if(!isset($city_cafes[1])||empty($city_cafes[1])){?>
+        <li class="list-group-item"><h2>None</h2></li>
+      <?php }else{
+         foreach($city_cafes[1] as $cafe){
+           $this->load->view("list/cafe",array("cafe"=>$cafe,"reviewer"=>$reviewer,"stars"=>1));
+        }
+      }?>
+      </ul>
+    </ul>
+    <ul class="list-group" style="margin:0;">
+      <li class="list-group-item star-header"><h4>Honourable Mention</h4></li>
+      <ul class="list-group" style="margin:0;">
+      <?php 
+      if(!isset($city_cafes[0])||empty($city_cafes[0])){?>
+        <li class="list-group-item"><h2>None</h2></li>
+      <?php }else{
+         foreach($city_cafes[0] as $cafe){
+           $this->load->view("list/cafe",array("cafe"=>$cafe,"reviewer"=>$reviewer,"stars"=>0));
+        }
+      }?>
+      </ul>
+    </ul>
+    <ul class="list-group" style="margin:0;">
+      <li class="list-group-item star-header"><h4><span class="glyphicon glyphicon-star-empty"/> Black Star</h4></li>
+      <ul class="list-group" style="margin:0;">
+      <?php 
+      if(!isset($city_cafes[-1])||empty($city_cafes[-1])){?>
+        <li class="list-group-item"><h2>None</h2></li>
+      <?php }else{
+         foreach($city_cafes[-1] as $cafe){
+           $this->load->view("list/cafe",array("cafe"=>$cafe,"reviewer"=>$reviewer,"stars"=>-1));
+        }
+      }?>
+      </ul>
+    </ul>
