@@ -67,7 +67,7 @@ class Welcome extends CI_Controller {
     }else{
     	$this->load->view('list/body',array("reviewer"=>FALSE));
     }
-  		$this->load->view('list/data',array("data"=>array("regions"=>$regions,"chains"=>$chains)));
+  		//$this->load->view('list/data',array("data"=>array("regions"=>$regions,"chains"=>$chains)));
     	$this->load->view('list/footer');
   }
 	public function get_cities(){
