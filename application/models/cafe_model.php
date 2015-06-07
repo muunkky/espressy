@@ -124,7 +124,7 @@ public function list_cities_by_distance($lat1,$lon1){
 	        $lat2 = $cities[$i]->Center_Latitude;
 	        $lon2 = $cities[$i]->Center_Longitude;
 	        $distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
-	        echo "Distance: ".$distance." <br />";
+	        echo "Distance to $cities[$i]->Name: ".$distance." <br />";
 	    }else{
 	        $distance = $i;
 	        $i++;
