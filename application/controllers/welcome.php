@@ -59,6 +59,7 @@ class Welcome extends CI_Controller {
 			  }
 			usort($regions,"comp_name");
 			$chains = $this->cafe_model->list_chains();
+			
 			$this->load->view('list/body',array("reviewer"=>TRUE,"regions"=>$regions,"chains"=>$chains,"error_message"=>$error_message,"reviewer_name"=>$user['reviewer_user']->Name));
 		}else{
 	    	$this->load->view('list/body',array("reviewer"=>FALSE));
@@ -66,6 +67,7 @@ class Welcome extends CI_Controller {
     }else{
     	$this->load->view('list/body',array("reviewer"=>FALSE));
     }
+  		$this->load->view('list/data',array("data"=>array("regions"=>$regions,"chains"=>$chains)));
     	$this->load->view('list/footer');
   }
 	public function get_cities(){
@@ -76,8 +78,8 @@ class Welcome extends CI_Controller {
 		$this->session->set_userdata(array('reviewer'=>TRUE,'latitude'=>$lat,"longitude"=>$long,"date"=>$date));
 	    $this->load->model('cafe_model');
 		if(!$lat||!$long){
-		    //$cities = $this->cafe_model->list_cities_alphabetically();
-		    //$error_message = $this->location_unavailable();
+		    $cities = $this->cafe_model->list_cities_alphabetically();
+		    $error_message = $this->location_unavailable();
 		}else{
 			$cities = $this->cafe_model->list_cities_by_distance($lat,$long);
 		}
