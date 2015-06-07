@@ -263,8 +263,58 @@ public function get_city_stars(){
 	$user = $this->get_user();
 	$email = $user["reviewer_email"];
       $res = $this->cafe_model->submit($email,$name,$region,$address,$latitude,$longitude,$rating,$cafe_rating_comments,$hours,$chain);
+            print_r($res);
+  }
+  
+  public function update(){
+  $id = $this->input->post("cafe_id");
+	$name = $this->input->post("cafe_name");
+	$region = $this->input->post("cafe_region");
+	$address = $this->input->post("cafe_address");
+	$latitude = $this->input->post("cafe_latitude");
+	$longitude = $this->input->post("cafe_longitude");
+	$rating = $this->input->post("cafe_rating");
+	$cafe_rating_comments = $this->input->post("cafe_rating_comments");
+	$chain = $this->input->post("cafe_chain");
+	$mon_open = $this->input->post("mon_open");
+	$tue_open = $this->input->post("tue_open");
+	$wed_open = $this->input->post("wed_open");
+	$thu_open = $this->input->post("thu_open");
+	$fri_open = $this->input->post("fri_open");
+	$sat_open = $this->input->post("sat_open");
+	$sun_open = $this->input->post("sun_open");
+	$mon_close = $this->input->post("mon_close");
+	$tue_close = $this->input->post("tue_close");
+	$wed_close = $this->input->post("wed_close");
+	$thu_close = $this->input->post("thu_close");
+	$fri_close = $this->input->post("fri_close");
+	$sat_close = $this->input->post("sat_close");
+	$sun_close = $this->input->post("sun_close");
+	
+	$hours= array(
+					"mon_open"	=>	$mon_open,
+					"tue_open"	=>	$tue_open,
+					"wed_open"	=>	$wed_open,
+					"thu_open"	=>	$thu_open,
+					"fri_open"	=>	$fri_open,
+					"sat_open"	=>	$sat_open,
+					"sun_open"	=>	$sun_open,
+					"mon_close"	=>	$mon_close,
+					"tue_close"	=>	$tue_close,
+					"wed_close"	=>	$wed_close,
+					"thu_close"	=>	$thu_close,
+					"fri_close"	=>	$fri_close,
+					"sat_close"	=>	$sat_close,
+					"sun_close"	=>	$sun_close,
+					);
+	
+    $this->load->model('cafe_model');
+	$user = $this->get_user();
+	$email = $user["reviewer_email"];
+      $res = $this->cafe_model->submit($email,$name,$region,$address,$latitude,$longitude,$rating,$cafe_rating_comments,$hours,$chain);
       print_r($res);
   }
+  
   public function subscribe(){
     $email=$this->input->post("email");
     $this->load->model('user_model');

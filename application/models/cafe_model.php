@@ -403,7 +403,7 @@ EOD;
   }
   function submit($email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
     $cafeID = $this->rise_cafe->NewCafe($name, NULL, $region);
-    $this->update($cafeID, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain);
+    return $this->update($cafeID, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain);
   }
   function update($id, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
     
