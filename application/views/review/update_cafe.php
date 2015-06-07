@@ -1,9 +1,12 @@
+<pre>
+    <?=$cafe?>
+</pre>
 <form id="update_form_<?=$cafe->ID?>">
 	<legend>
 	  <h2>Update <?=$cafe->Name?></h2>
 	</legend>
 	<div class="form-group">
-	  	<label for="cafe_name_<?=$cafe->ID?>">Cafe Name <?=$cafe->Region?>
+	  	<label for="cafe_name_<?=$cafe->ID?>">Cafe Name
 	  		<input type="text" class="form-control" id="cafe_name_<?=$cafe->ID?>" value="<?=$cafe->Name?>" required>
 		</label>
 		<label for="cafe_chain">Chain
