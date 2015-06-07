@@ -113,6 +113,12 @@ $threestar = "";
 
 <div class="row collapse update-collapse-<?=$cafe_id?>" id="update-collapse-<?=$cafe_id?>" style="background:black;color:white;">
 <?php
+      $regions = $this->cafe_model->list_regions();
+			function comp_name($a, $b) {
+				return strcmp($a->Name, $b->Name);
+			  }
+			usort($regions,"comp_name");
+			$chains = $this->cafe_model->list_chains();
       	$this->load->view("review/add_cafe",array("regions"=>$regions,"chains"=>$chains));
       ?>
     </div>
