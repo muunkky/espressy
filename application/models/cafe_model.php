@@ -405,7 +405,8 @@ EOD;
     $cafeID = $this->rise_cafe->NewCafe($name, NULL, $region);
     $this->update($cafeID,$name,$region,$address,$latitude,$longitude,$hours,$chain);
      
-    $user = $this->rise_user->ListUserByEmail($email)[0];
+    $users = $this->rise_user->ListUserByEmail($email);
+    $user = $user[0];
     $ratingID =$this->rise_user->NewRating($user->ID,$cafeID);
     $res = $this->rise_user->SetRating($ratingID, $rating, $comments, date("Y-m-d H:i:s"), $user->ID, $cafeID, false);
   }
