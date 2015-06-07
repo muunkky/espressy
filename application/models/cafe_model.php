@@ -403,22 +403,26 @@ EOD;
   }
   function submit($email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
     $cafeID = $this->rise_cafe->NewCafe($name, NULL, $region);
-    return $this->update($cafeID, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain);
+    $this->update($cafeID,$name,$region,$address,$latitude,$longitude,$hours,$chain);
+     
+    $user = $this->rise_user->ListUserByEmail($email)[0];
+    $ratingID =$this->rise_user->NewRating($user->ID,$cafeID);
+    $res = $this->rise_user->SetRating($ratingID, $rating, $comments, date("Y-m-d H:i:s"), $user->ID, $cafeID, false);
   }
-  function update($cafeID, $name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
+  function update($cafeID, $name,$region,$address,$latitude,$longitude,$hours,$chain){
     
 	$newCafe = $this->rise_cafe->GetCafe($cafeID);
 	if($chain=="NULL"){
 		$chain = NULL;
 	}
 	$this->rise_cafe->SetCafe(	$newCafe->ID, 
-								$newCafe->Name, 
+								$name, 
 								$latitude, 
 								$longitude, 
 								$address, 
 								$newCafe->Google_Places_Reference, 
 								$newCafe->Google_Places_Id, 
-								$rating, $newCafe->RegionID, 
+								$newCafe->Star_Rating, $region, 
 								$hours["mon_open"], 
 								$hours["mon_close"], 
 								$hours["tue_open"], 
@@ -435,7 +439,7 @@ EOD;
 								$hours["sun_close"], 
 								$chain);
 
-	return "<div class='alert alert-success'>Thank you for your submission.</div>";
+	return "<div class='alert alert-success'>Thank you for your update.</div>";
   }
   function getHours($cafe,$date){
     $date = trim(strstr($date, '(', true));

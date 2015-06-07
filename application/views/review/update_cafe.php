@@ -333,8 +333,6 @@ $( document ).on("submit", "#update_form_<?=$cafe->ID?>",function(e){
     			cafe_address: cafe_address,
     			cafe_latitude: cafe_latitude,
     			cafe_longitude: cafe_longitude,
-    			cafe_rating: cafe_rating,
-    			cafe_rating_comments: cafe_rating_comments,
     			
     			cafe_mon_open: cafe_mon_open,
     			cafe_tue_open: cafe_tue_open,
