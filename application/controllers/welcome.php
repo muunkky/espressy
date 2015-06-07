@@ -311,7 +311,7 @@ public function get_city_stars(){
     $this->load->model('cafe_model');
 	$user = $this->get_user();
 	$email = $user["reviewer_email"];
-      $res = $this->cafe_model->update($id,$email,$name,$region,$address,$latitude,$longitude,$rating,$cafe_rating_comments,$hours,$chain);
+      $res = $this->cafe_model->update($id,$name,$region,$address,$latitude,$longitude,$rating,$cafe_rating_comments,$hours,$chain);
       print_r($res);
   }
   

@@ -263,35 +263,7 @@
     	});
 	  </script>
 	</div>
-	<legend>Cafe Rating</legend>
-	<div class="form-group">
-          <input style="margin-left:25px;" type="radio" name="newcafe_review_radio_<?=$cafe->ID?>" id="newcafe_review_threestar_<?=$cafe->ID?>" value="3" <?=$cafe->Star_Rating==3?"checked":""?> required>
-          <label class="radio-inline"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span> Three Star
-          </label>
-	</div>
-    <div class="form-group">
-          <input style="margin-left:25px;" type="radio" name="newcafe_review_radio_<?=$cafe->ID?>" id="newcafe_review_twostar_<?=$cafe->ID?>" value="2" <?=$cafe->Star_Rating==2?"checked":""?> >
-          <label class="radio-inline" ><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span> Two Star
-          </label>
-    </div>   
-    <div class="form-group">
-          <input style="margin-left:25px;" type="radio" name="newcafe_review_radio_<?=$cafe->ID?>" id="newcafe_review_onestar_<?=$cafe->ID?>" value="1" <?=$cafe->Star_Rating==1?"checked":""?>>
-          <label class="radio-inline" ><span class="glyphicon glyphicon-star"></span> One Star
-          </label>
-    </div>
-    <div class="form-group">
-          <input style="margin-left:25px;" type="radio" name="newcafe_review_radio_<?=$cafe->ID?>" id="newcafe_review_HM_<?=$cafe->ID?>" value="0"  <?=$cafe->Star_Rating==0?"checked":""?>>
-          <label class="radio-inline" >HM
-          </label>
-    </div>
-    <div class="form-group">
-          <input style="margin-left:25px;" type="radio" name="newcafe_review_radio_<?=$cafe->ID?>" id="newcafe_review_blackstar_<?=$cafe->ID?>" value="-1"  <?=$cafe->Star_Rating==-1?"checked":""?>>
-          <label class="radio-inline" ><span class="glyphicon glyphicon-star-empty"></span> Black Star
-          </label>
-    </div>
-    <div class="form-group">
-            <textarea class="form-control" placeholder="Optional Comments" id="newcafe_review_comments_<?=$cafe->ID?>"></textarea>
-    </div>
+	
 	<button type="submit" class="btn btn-default">Submit</button>
 </form>
 <script>

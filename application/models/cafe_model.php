@@ -405,7 +405,7 @@ EOD;
     $cafeID = $this->rise_cafe->NewCafe($name, NULL, $region);
     return $this->update($cafeID, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain);
   }
-  function update($cafeID, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
+  function update($cafeID, $name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
     
 	$newCafe = $this->rise_cafe->GetCafe($cafeID);
 	if($chain=="NULL"){
@@ -434,9 +434,7 @@ EOD;
 								$hours["sun_open"],
 								$hours["sun_close"], 
 								$chain);
-	$users = $this->rise_user->ListUserByEmail(1, $email);
-	$user = $users[0];
-	$this->submit_review($cafeID, $rating, $comments, $user->Name, $email);
+
 	return "<div class='alert alert-success'>Thank you for your submission.</div>";
   }
   function getHours($cafe,$date){
