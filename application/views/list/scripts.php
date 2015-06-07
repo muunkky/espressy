@@ -23,7 +23,7 @@
           },
           success: function(data){
           	
-          	console.log(data.cafe_list);
+          	console.log(data);
             var cafe_list = $("#cafe_list");
             var logo_splash = $("#logo_splash");
             var error_message = $("#error_message");
