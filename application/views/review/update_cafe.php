@@ -1,6 +1,3 @@
-<pre>
-    <?=print_r($cafe)?>
-</pre>
 <form id="update_form_<?=$cafe->ID?>">
 	<legend>
 	  <h2>Update <?=$cafe->Name?></h2>
@@ -13,7 +10,7 @@
 		<select id="cafe_chain_<?=$cafe->ID?>" class="form-control">
 				<option value="NULL">Not a Chain</option>
 			<?php foreach ($chains as $c) {?>
-				<option value="<?=$c->ID;?>" <?=$c->ID==$cafe->Chain?"selected":""?> ><?=$c->Name;?></option>
+				<option value="<?=$c->ID;?>" <?=$c->ID==$cafe->ChainID?"selected":""?> ><?=$c->Name;?></option>
 			<?php } ?>
 		</select>
 		</label>
@@ -21,7 +18,7 @@
 		<select id="cafe_region_<?=$cafe->ID?>" class="form-control" required>
 				<option data-lat="NULL" data-lon="NULL" value="NULL">Select Region</option>
 			<?php foreach ($regions as $r) {?>
-				<option data-lat="<?=$r->Center_Latitude?>" data-lon="<?=$r->Center_Longitude?>" value="<?=$r->ID;?>"  <?=$r->ID==$cafe->Region?"selected":""?> ><?=$r->Name;?></option>
+				<option data-lat="<?=$r->Center_Latitude?>" data-lon="<?=$r->Center_Longitude?>" value="<?=$r->ID;?>"  <?=$r->ID==$cafe->RegionID?"selected":""?> ><?=$r->Name;?></option>
 			<?php } ?>
 		</select>
 		</label>
