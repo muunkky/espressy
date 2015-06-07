@@ -27,7 +27,7 @@ $threestar = "";
 <span class="glyphicon glyphicon-user"></span>
 <a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">REVIEW
 </a>
-<a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">UPDATE
+<a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".update-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">UPDATE
 </a>
 </div>
 <div class="row hidden" id="review-report-<?=$cafe_id?>">
@@ -107,4 +107,12 @@ $threestar = "";
 		});
     });
 </script>
+
+
+<?php
+      	$this->load->view("review/add_cafe",array("regions"=>$regions,"chains"=>$chains));
+      ?>
+    </div>
+
+
 </div>
