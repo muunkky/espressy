@@ -402,9 +402,12 @@ EOD;
 	}
   }
   function submit($email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
-    
     $cafeID = $this->rise_cafe->NewCafe($name, NULL, $region);
-	$newCafe = $this->rise_cafe->GetCafe($cafeID);
+    $this->update($cafeID, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain);
+  }
+  function update($id, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
+    
+	$newCafe = $this->rise_cafe->GetCafe($id);
 	if($chain=="NULL"){
 		$chain = NULL;
 	}
