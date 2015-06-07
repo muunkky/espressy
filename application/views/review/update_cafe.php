@@ -1,5 +1,5 @@
 <pre>
-    <?=$cafe?>
+    <?=print_r($cafe)?>
 </pre>
 <form id="update_form_<?=$cafe->ID?>">
 	<legend>
