@@ -405,9 +405,9 @@ EOD;
     $cafeID = $this->rise_cafe->NewCafe($name, NULL, $region);
     return $this->update($cafeID, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain);
   }
-  function update($id, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
+  function update($cafeID, $email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
     
-	$newCafe = $this->rise_cafe->GetCafe($id);
+	$newCafe = $this->rise_cafe->GetCafe($cafeID);
 	if($chain=="NULL"){
 		$chain = NULL;
 	}
