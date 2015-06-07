@@ -314,7 +314,7 @@ $( document ).ready(function(){
 	function isNumber(n) {
 	  return !isNaN(parseFloat(n)) && isFinite(n);
 	}
-$( document ).on("submit", "#update_form",function(e){
+$( document ).on("submit", "#update_form_<?=$cafe->ID?>",function(e){
 	
     	e.preventDefault();
     	var result = validate();
