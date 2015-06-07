@@ -24,8 +24,10 @@ $threestar = "";
 ?>
 
 <div class="row" style="background:#DDD;margin-bottom:0px;margin-bottom: 10px;">
-<a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">
-  <span class="glyphicon glyphicon-user"></span> REVIEW <span class="glyphicon glyphicon-plus"></span>
+<span class="glyphicon glyphicon-user"></span>
+<a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">REVIEW
+</a>
+<a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">UPDATE
 </a>
 </div>
 <div class="row hidden" id="review-report-<?=$cafe_id?>">
