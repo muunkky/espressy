@@ -11,6 +11,7 @@
       navigator.geolocation.getCurrentPosition(function (position){
       	lat  = position.coords.latitude;
         lng = position.coords.longitude;
+        jQuery.data(document.body, "position", position.coords);
 		$.ajax({
           dataType: "json",
           url: "<?=base_url('welcome/get_cities')?>",
