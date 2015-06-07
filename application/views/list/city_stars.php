@@ -1,7 +1,7 @@
     <ul class="list-group" style="margin:0;">
       <?php 
       	$HM=0;
-		
+		$reviewed=false;
         foreach($city_cafes as $cafe){
           	if($cafe->Star_Rating>0){
           		if(isset($cafe->Reviews) && !empty($cafe->Reviews)){
