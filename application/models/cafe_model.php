@@ -119,6 +119,8 @@ public function list_cities_by_distance($lat1,$lon1){
     $city_dist = array();
 	$cities = $this->rise_cafe->ListRegion(0);
   	for($i=0;$i<count($cities);$i++){
+  	  echo "Lat: ".$lat1." Long: ".$lon1."<br />";
+  	  print_r("<pre>".$cities[&i]."</pre>");
   		if($lat1*$lon1!=0){
 	        $lat2 = $cities[$i]->Center_Latitude;
 	        $lon2 = $cities[$i]->Center_Longitude;
