@@ -108,11 +108,11 @@ $threestar = "";
     });
 </script>
 
-
+<div class="row collapse update-collapse-<?=$cafe_id?>" id="update-collapse-<?=$cafe_id?>" style="background:black;color:white;">
 <?php
       	$this->load->view("review/add_cafe",array("regions"=>$regions,"chains"=>$chains));
       ?>
     </div>
-
+</div>
 
 </div>
