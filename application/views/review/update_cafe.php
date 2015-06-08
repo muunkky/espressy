@@ -19,7 +19,7 @@
 			<?php } ?>
 				
 		</select>
-		<input type="text" id="cafe_chain_new_<?=$cafe->ID?>" name="cafe_chain_new_<?=$cafe->ID?>" style="display:none;" />
+		<input type="text" id="cafe_chain_new_<?=$cafe->ID?>" name="cafe_chain_new_<?=$cafe->ID?>" style="display:none;" placeholder="New Chain Name" />
 		<script type="text/javascript">
 			function NewChain_<?=$cafe->ID?>(val){
 			 var element=document.getElementById('cafe_chain_new_<?=$cafe->ID?>');

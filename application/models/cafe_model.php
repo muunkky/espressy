@@ -403,12 +403,30 @@ EOD;
   }
   function submit($email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
     $cafeID = $this->rise_cafe->NewCafe($name, NULL, $region);
+    $cafe = $this->rise_cafe->GetCafe($cafeID);
     $this->update($cafeID,$name,$region,$address,$latitude,$longitude,$hours,$chain);
-     
+    $cafe = $this->rise_cafe->GetCafe($cafeID);
+    
     $users = $this->rise_user->ListUserByEmail($email);
     $user = $user[0];
     $ratingID =$this->rise_user->NewRating($user->ID,$cafeID);
     $res = $this->rise_user->SetRating($ratingID, $rating, $comments, date("Y-m-d H:i:s"), $user->ID, $cafeID, false);
+    $this->rise_cafe->SetCafe($cafe->ID,$cafe->Name,$cafe->Latitude,$cafe->Longitude, $cafe->Address, $cafe->Google_Places_Reference, $cafe->Google_Places_Id, $rating, $cafe->RegionID,
+                              $cafe->Monday_Open,
+                              $cafe->Monday_Close,
+                              $cafe->Tuesday_Open,
+                              $cafe->Tuesday_Close,
+                              $cafe->Wednesday_Open,
+                              $cafe->Wednesday_Close,
+                              $cafe->Thursday_Open,
+                              $cafe->Thursday_Close,
+                              $cafe->Friday_Open,
+                              $cafe->Friday_Close,
+                              $cafe->Saturday_Open,
+                              $cafe->Saturday_Close,
+                              $cafe->Sunday_Open,
+                              $cafe->Sunday_Close,
+                              $cafe->ChainID);
   }
   function update($cafeID, $name,$region,$address,$latitude,$longitude,$hours,$chain){
     
