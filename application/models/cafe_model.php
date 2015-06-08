@@ -402,10 +402,7 @@ EOD;
 	}
   }
   function submit($email,$name,$region,$address,$latitude,$longitude,$rating,$comments,$hours,$chain){
-    echo "<pre>";
-    print_r(array("hours"=>$hours));
-    echo "</pre>";
-    exit;
+    
     $cafeID = $this->rise_cafe->NewCafe($name, NULL, $region);
     $cafe = $this->rise_cafe->GetCafe($cafeID);
     $this->update($cafeID,$name,$region,$address,$latitude,$longitude,$hours,$chain);
