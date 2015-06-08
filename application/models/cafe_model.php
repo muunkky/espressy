@@ -411,7 +411,7 @@ EOD;
     $user = $user[0];
     $ratingID =$this->rise_user->NewRating($user->ID,$cafeID);
     $res = $this->rise_user->SetRating($ratingID, $rating, $comments, date("Y-m-d H:i:s"), $user->ID, $cafeID, false);
-    $this->rise_cafe->SetCafe($cafe->ID,$cafe->Name,$cafe->Latitude,$cafe->Longitude, $cafe->Address, $cafe->Google_Places_Reference, $cafe->Google_Places_Id, $rating, $cafe->RegionID,
+    $this->rise_cafe->SetCafe($cafeID,$cafe->Name,$cafe->Latitude,$cafe->Longitude, $cafe->Address, $cafe->Google_Places_Reference, $cafe->Google_Places_Id, $rating, $cafe->RegionID,
                               $cafe->Monday_Open,
                               $cafe->Monday_Close,
                               $cafe->Tuesday_Open,
