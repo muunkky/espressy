@@ -7,7 +7,7 @@
 	  		<input type="text" class="form-control" id="cafe_name_<?=$cafe->ID?>" value="<?=$cafe->Name?>" required>
 		</label>
 		<label for="cafe_chain">Chain
-		<select id="cafe_chain_<?=$cafe->ID?>" class="form-control">
+		<select id="cafe_chain_<?=$cafe->ID?>" class="form-control" onchange='NewChain_<?=$cafe->ID?>(this.value);'>
 				<option value="NULL">Not a Chain</option>
 				<option value="NEW">New Chain</option>
 				<option disabled>──────────</option>
