@@ -9,10 +9,29 @@
 		<label for="cafe_chain">Chain
 		<select id="cafe_chain_<?=$cafe->ID?>" class="form-control">
 				<option value="NULL">Not a Chain</option>
-			<?php foreach ($chains as $c) {?>
+				<option value="NEW">New Chain</option>
+				<option disabled>──────────</option>
+			<?php
+				function comp_name($a, $b) {
+					return strcmp($a->Name, $b->Name);
+				  }
+				usort($chains,"comp_name");
+				foreach ($chains as $c) {?>
 				<option value="<?=$c->ID;?>" <?=$c->ID==$cafe->ChainID?"selected":""?> ><?=$c->Name;?></option>
 			<?php } ?>
+				
 		</select>
+		<input type="text" id="cafe_chain_new_<?=$cafe->ID?>" name="cafe_chain_new_<?=$cafe->ID?>" style="display:none;" />
+		<script type="text/javascript">
+			function NewChain_<?=$cafe->ID?>(val){
+			 var element=document.getElementById('cafe_chain_<?=$cafe->ID?>');
+			 if(val=='NEW')
+			   element.style.display='block';
+			 else  
+			   element.style.display='none';
+			}
+			
+			</script> 
 		</label>
 		<label for="cafe_region_<?=$cafe->ID?>">Region
 		<select id="cafe_region_<?=$cafe->ID?>" class="form-control" required>
