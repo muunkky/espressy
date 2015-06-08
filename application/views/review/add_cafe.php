@@ -69,11 +69,7 @@
 			var update_test_link = function(){
 				var href = "http://maps.google.com/?q=";
 				href = href + $("#cafe_name").val()+",%20";
-				href = href + $("#cafe_address").val()+"%20";
-				href = href + "near%20";
-				href = href + $("#cafe_latitude").val();
-				href = href + ",";
-				href = href + $("#cafe_longitude").val();
+				href = href + $("#cafe_address").val();
 				$("#map_test").attr("href", href);
 			}
 			var lastValue = '';
