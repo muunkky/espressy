@@ -349,9 +349,7 @@ $( document ).on("submit", "#update_form_<?=$cafe->ID?>",function(e){
     			cafe_sun_close: cafe_sun_close
     		},
     		success: function(data){
-    			//location.reload();
-    			//$('#submit_form')[0].reset();
-    			//$('.submit_form').collapse('hide');
+    			location.reload();
     		}
     	});
     });
