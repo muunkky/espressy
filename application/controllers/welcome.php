@@ -281,6 +281,7 @@ public function get_city_stars(){
 	$rating = $this->input->post("cafe_rating");
 	$cafe_rating_comments = $this->input->post("cafe_rating_comments");
 	$chain = $this->input->post("cafe_chain");
+	$new_chain = $this->input->post("cafe_chain_new");
 	$mon_open = $this->input->post("cafe_mon_open");
 	$tue_open = $this->input->post("cafe_tue_open");
 	$wed_open = $this->input->post("cafe_wed_open");
@@ -314,7 +315,9 @@ public function get_city_stars(){
 					);
 	
     $this->load->model('cafe_model');
-
+ if($chain=="NEW"||$chain=="New Chain"){
+  	$chain = $this->cafe_model->new_chain($new_chain);
+  }
       $res = $this->cafe_model->update($id,$name,$region,$address,$latitude,$longitude,$hours,$chain);
       print_r($res);
   }
