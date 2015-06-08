@@ -340,13 +340,13 @@ $( document ).on("submit", "#update_form_<?=$cafe->ID?>",function(e){
     			cafe_sat_open: cafe_sat_open,
     			cafe_sun_open: cafe_sun_open,
     			
-    			cafe_mon_open: cafe_mon_open,
-    			cafe_tue_open: cafe_tue_open,
-    			cafe_wed_open: cafe_wed_open,
-    			cafe_thu_open: cafe_thu_open,
-    			cafe_fri_open: cafe_fri_open,
-    			cafe_sat_open: cafe_sat_open,
-    			cafe_sun_open: cafe_sun_open
+    			cafe_mon_close: cafe_mon_close,
+    			cafe_tue_close: cafe_tue_close,
+    			cafe_wed_close: cafe_wed_close,
+    			cafe_thu_close: cafe_thu_close,
+    			cafe_fri_close: cafe_fri_close,
+    			cafe_sat_close: cafe_sat_close,
+    			cafe_sun_close: cafe_sun_close
     		},
     		success: function(data){
     			//location.reload();
