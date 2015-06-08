@@ -119,11 +119,11 @@
 	  <br />
 	  <label for="tue_open_<?=$cafe->ID?>">
 		Tuesday Open
-	  	<input type="time" class="form-control" id="tue_open_<?=$cafe->ID?>" placeholder="Tuesday Open" value="<?=$cafe->Tuesday_Open?>" required>
+	  	<input type="time" class="form-control" id="tue_open_<?=$cafe->ID?>" name="tue_open_<?=$cafe->ID?>" placeholder="Tuesday Open" value="<?=date("H:i", strtotime($cafe->Tuesday_Open))?>" required>
 	  </label>
 	  <label for="tue_close_<?=$cafe->ID?>">
 		Tuesday Close
-	  	<input type="time" class="form-control" id="tue_close_<?=$cafe->ID?>" placeholder="Tuesday Close" value="<?=$cafe->Tuesday_Close?>" required>
+	  	<input type="time" class="form-control" id="tue_close_<?=$cafe->ID?>" name="tue_close_<?=$cafe->ID?>" placeholder="Tuesday Close" value="<?=date("H:i", strtotime($cafe->Tuesday_Close))?>" required>
 	  </label>
 	  
 	    <label>
@@ -145,11 +145,11 @@
 	  <br />
 	  <label for="wed_open_<?=$cafe->ID?>">
 		Wednesday Open
-	  	<input type="time" class="form-control" id="wed_open_<?=$cafe->ID?>" placeholder="Wednesday Open" value="<?=$cafe->Wednesday_Open?>" required>
+	  	<input type="time" class="form-control" id="wed_open_<?=$cafe->ID?>" name="wed_open_<?=$cafe->ID?>" placeholder="Wednesday Open" value="<?=date("H:i", strtotime($cafe->Wednesday_Open))?>" required>
 	  </label>
 	  <label for="wed_close_<?=$cafe->ID?>">
 		Wednesday Close
-	  	<input type="time" class="form-control" id="wed_close_<?=$cafe->ID?>" placeholder="Wednesday Close" value="<?=$cafe->Wednesday_Close?>" required>
+	  	<input type="time" class="form-control" id="wed_close_<?=$cafe->ID?>" name="wed_close_<?=$cafe->ID?>" placeholder="Wednesday Close" value="<?=date("H:i", strtotime($cafe->Wednesday_Open))?>" required>
 	  </label>
 	    <label>
 	      <input type="checkbox" id="repeat_hours_wed_<?=$cafe->ID?>"> Same as Above
@@ -169,11 +169,11 @@
 	  <br />
 	  <label for="thu_open_<?=$cafe->ID?>">
 		Thursday Open
-	  	<input type="time" class="form-control" id="thu_open_<?=$cafe->ID?>" placeholder="Thursday Open" value="<?=$cafe->Thursday_Open?>" required>
+	  	<input type="time" class="form-control" id="thu_open_<?=$cafe->ID?>" name="thu_open_<?=$cafe->ID?>" placeholder="Thursday Open" value="<?=date("H:i", strtotime($cafe->Thursday_Open))?>" required>
 	  </label>
 	  <label for="thu_close_<?=$cafe->ID?>">
 		Thursday Close
-	  	<input type="time" class="form-control" id="thu_close_<?=$cafe->ID?>" placeholder="Thursday Close" value="<?=$cafe->Thursday_Close?>" required>
+	  	<input type="time" class="form-control" id="thu_close_<?=$cafe->ID?>" name="thu_close_<?=$cafe->ID?>" placeholder="Thursday Close" value="<?=date("H:i", strtotime($cafe->Thursday_Close))?>" required>
 	  </label>
 	    <label>
 	      <input type="checkbox" id="repeat_hours_thu_<?=$cafe->ID?>"> Same as Above
@@ -193,11 +193,11 @@
 	  <br />
 	  <label for="fri_open_<?=$cafe->ID?>">
 		Friday Open
-	  	<input type="time" class="form-control" id="fri_open_<?=$cafe->ID?>" placeholder="Friday Open" value="<?=$cafe->Friday_Open?>" required>
+	  	<input type="time" class="form-control" id="fri_open_<?=$cafe->ID?>" name="fri_open_<?=$cafe->ID?>" placeholder="Friday Open" value="<?=date("H:i", strtotime($cafe->Friday_Open))?>" required>
 	  </label>
 	  <label for="fri_close_<?=$cafe->ID?>">
 		Friday Close
-	  	<input type="time" class="form-control" id="fri_close_<?=$cafe->ID?>" placeholder="Friday Close" value="<?=$cafe->Friday_Close?>" required>
+	  	<input type="time" class="form-control" id="fri_close_<?=$cafe->ID?>" name="fri_close_<?=$cafe->ID?>" placeholder="Friday Close" value="<?=date("H:i", strtotime($cafe->Friday_Close))?>" required>
 	  </label>
 	    <label>
 	      <input type="checkbox" id="repeat_hours_fri_<?=$cafe->ID?>"> Same as Above
@@ -217,11 +217,11 @@
 	  </script>
 	  <label for="sat_open_<?=$cafe->ID?>">
 		Saturday Open
-	  	<input type="time" class="form-control" id="sat_open_<?=$cafe->ID?>" placeholder="Saturday Open" value="<?=$cafe->Saturday_Open?>" required>
+	  	<input type="time" class="form-control" id="sat_open_<?=$cafe->ID?>" name="sat_open_<?=$cafe->ID?>" placeholder="Saturday Open" value="<?=date("H:i", strtotime($cafe->Saturday_Open))?>" required>
 	  </label>
 	  <label for="sat_close_<?=$cafe->ID?>">
 		Saturday Close
-	  	<input type="time" class="form-control" id="sat_close_<?=$cafe->ID?>" placeholder="Saturday Close" value="<?=$cafe->Saturday_Close?>" required>
+	  	<input type="time" class="form-control" id="sat_close_<?=$cafe->ID?>"  name="sat_close_<?=$cafe->ID?>" placeholder="Saturday Close" value="<?=date("H:i", strtotime($cafe->Saturday_Close))?>" required>
 	  </label>
 	    <label>
 	      <input type="checkbox" id="repeat_hours_sat_<?=$cafe->ID?>"> Same as Above
@@ -241,11 +241,11 @@
 	  <br />
 	  <label for="sun_open_<?=$cafe->ID?>">
 		Sunday Open
-	  	<input type="time" class="form-control" id="sun_open_<?=$cafe->ID?>" placeholder="Sunday Open" value="<?=$cafe->Sunday_Open?>" required>
+	  	<input type="time" class="form-control" id="sun_open_<?=$cafe->ID?>" name="sun_open_<?=$cafe->ID?>" placeholder="Sunday Open" value="<?=date("H:i", strtotime($cafe->Sunday_Open))?>" required>
 	  </label>
 	  <label for="sun_close_<?=$cafe->ID?>">
 		Sunday Close
-	  	<input type="time" class="form-control" id="sun_close_<?=$cafe->ID?>" placeholder="Sunday Close" value="<?=$cafe->Sunday_Close?>" required>
+	  	<input type="time" class="form-control" id="sun_close_<?=$cafe->ID?>" name="sun_close_<?=$cafe->ID?>" placeholder="Sunday Close" value="<?=date("H:i", strtotime($cafe->Sunday_Close))?>" required>
 	  </label>
 	    <label>
 	      <input type="checkbox" id="repeat_hours_sun_<?=$cafe->ID?>"> Same as Above
