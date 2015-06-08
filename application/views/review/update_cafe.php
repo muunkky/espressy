@@ -352,7 +352,7 @@ $( document ).on("submit", "#update_form_<?=$cafe->ID?>",function(e){
     			cafe_sun_open: cafe_sun_open
     		},
     		success: function(data){
-    			location.reload();
+    			//location.reload();
     			//$('#submit_form')[0].reset();
     			//$('.submit_form').collapse('hide');
     		}
