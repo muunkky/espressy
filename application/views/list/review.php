@@ -24,7 +24,6 @@ $threestar = "";
 ?>
 
 <div class="row" style="background:#DDD;margin-bottom:0px;margin-bottom: 10px;">
-<span class="glyphicon glyphicon-user"></span>
 <a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">REVIEW
 </a>
 <a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".update-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">UPDATE
