@@ -110,11 +110,11 @@
 	<div class="form-group">
 	  <label for="mon_open_<?=$cafe->ID?>">
 		Monday Open
-	  	<input type="time" class="form-control" id="mon_open_<?=$cafe->ID?>" placeholder="Monday Open" value="<?=$cafe->Monday_Open?>" required>
+	  	<input type="time" class="form-control" id="mon_open_<?=$cafe->ID?>" name="mon_open_<?=$cafe->ID?>" placeholder="Monday Open" value="<?=date("H:i", strtotime($cafe->Monday_Open))?>" required>
 	  </label>
 	  <label for="mon_close_<?=$cafe->ID?>">
 		Monday Close
-	  	<input type="time" class="form-control" id="mon_close_<?=$cafe->ID?>" placeholder="Monday Close" value="<?=$cafe->Monday_Close?>" required>
+	  	<input type="time" class="form-control" id="mon_close_<?=$cafe->ID?>" placeholder="Monday Close" value="<?=date("H:i", strtotime($cafe->Monday_Close))?>" required>
 	  </label>
 	  <br />
 	  <label for="tue_open_<?=$cafe->ID?>">
