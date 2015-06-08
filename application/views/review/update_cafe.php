@@ -22,7 +22,7 @@
 		<input type="text" id="cafe_chain_new_<?=$cafe->ID?>" name="cafe_chain_new_<?=$cafe->ID?>" style="display:none;" />
 		<script type="text/javascript">
 			function NewChain_<?=$cafe->ID?>(val){
-			 var element=document.getElementById('cafe_chain_<?=$cafe->ID?>');
+			 var element=document.getElementById('cafe_chain_new_<?=$cafe->ID?>');
 			 if(val=='NEW')
 			   element.style.display='block';
 			 else  
