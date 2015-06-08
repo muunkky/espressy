@@ -67,7 +67,7 @@
       							</div>
       							<div class="col-xs-2 text-center">
 					                <h3>
-						            	<a target="_blank" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>" style="padding:3px;color:black;margin-right:15px;border:1px solid #DDD;border-radius:5px;background-color:transparent;" class="btn">
+						            	<a target="_blank" href="http://maps.google.com/?q=<?=$s->Name;?>,%20<?=$s->Address;?>" style="padding:3px;color:black;margin-right:15px;border:1px solid #DDD;border-radius:5px;background-color:transparent;" class="btn">
 						            		<span class="glyphicon glyphicon-globe"></span> <?=round($s->Distance,1)?> km
 					                	</a>
 				                	</h3>
