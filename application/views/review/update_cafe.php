@@ -12,9 +12,7 @@
 				<option value="NEW">New Chain</option>
 				<option disabled>──────────</option>
 			<?php
-				function comp_name($a, $b) {
-					return strcmp($a->Name, $b->Name);
-				  }
+				
 				usort($chains,"comp_name");
 				foreach ($chains as $c) {?>
 				<option value="<?=$c->ID;?>" <?=$c->ID==$cafe->ChainID?"selected":""?> ><?=$c->Name;?></option>
