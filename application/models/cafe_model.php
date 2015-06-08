@@ -504,7 +504,11 @@ EOD;
       return $weekday.": ".date("g".(date("i",strtotime($open))!="00"?':i':'')." a",strtotime($open))." to ".date("g".(date("i",strtotime($close))!="00"?':i':'')." a",strtotime($close));
     }
   }
-
+  function new_chain($name){
+    $chainID = $this->rise_cafe->NewChain();
+    $this->rise_cafe->SetChain($chainID,$name);
+    return $chainID;
+  }
   function sortByDistance( &$array )
   {
     

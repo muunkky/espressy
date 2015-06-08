@@ -7,12 +7,29 @@
 	  		<input type="text" class="form-control" id="cafe_name" required>
 		</label>
 		<label for="cafe_chain">Chain
-		<select id="cafe_chain" class="form-control">
+		<select id="cafe_chain" class="form-control" onchange='NewChain_<?=$cafe->ID?>(this.value);'>
 				<option value="NULL">Not a Chain</option>
-			<?php foreach ($chains as $c) {?>
-				<option value="<?=$c->ID;?>"><?=$c->Name;?></option>
+				<option value="NEW">New Chain</option>
+				<option disabled>──────────</option>
+			<?php
+				
+				usort($chains,"comp_name");
+				foreach ($chains as $c) {?>
+				<option value="<?=$c->ID;?>" <?=$c->ID==$cafe->ChainID?"selected":""?> ><?=$c->Name;?></option>
 			<?php } ?>
+				
 		</select>
+		<input type="text" id="cafe_chain_new" name="cafe_chain_new" style="display:none;" placeholder="New Chain Name" />
+		<script type="text/javascript">
+			function NewChain_<?=$cafe->ID?>(val){
+			 var element=document.getElementById('cafe_chain_new');
+			 if(val=='NEW')
+			   element.style.display='block';
+			 else  
+			   element.style.display='none';
+			}
+			
+			</script> 
 		</label>
 		<label for="cafe_region">Region
 		<select id="cafe_region" class="form-control" required>
@@ -320,6 +337,7 @@ $( document ).on("submit", "#submit_form",function(e){
     	}
     	var cafe_name = $("#cafe_name").val();
     	var cafe_chain = $("#cafe_chain").val();
+    	var cafe_chain_new = $("#cafe_chain_new").val();
     	var cafe_region = $("#cafe_region").val();
     	var cafe_address = $("#cafe_address").val();
     	var cafe_latitude = $("#cafe_latitude").val();
@@ -351,6 +369,7 @@ $( document ).on("submit", "#submit_form",function(e){
     		data: {
     			cafe_name: cafe_name,
     			cafe_chain: cafe_chain,
+    			cafe_chain_new: cafe_chain_new,
     			cafe_region: cafe_region,
     			cafe_address: cafe_address,
     			cafe_latitude: cafe_latitude,
