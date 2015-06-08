@@ -416,6 +416,10 @@ EOD;
 	if($chain=="NULL"){
 		$chain = NULL;
 	}
+	echo "<pre>";
+	print_r($hours);
+	echo "</pre>";
+	exit;
 	$this->rise_cafe->SetCafe(	$newCafe->ID, 
 								$name, 
 								$latitude, 
