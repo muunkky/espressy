@@ -319,11 +319,6 @@ $( document ).on("submit", "#update_form_<?=$cafe->ID?>",function(e){
     	var cafe_sat_close = $("#sat_close_<?=$cafe->ID?>").val();
     	var cafe_sun_close = $("#sun_close_<?=$cafe->ID?>").val();
 		
-		console.log(cafe_mon_open);
-		console.log(cafe_mon_close);
-		
-    	var cafe_rating_comments = $("#newcafe_review_comments_<?=$cafe->ID?>").val();
-
     	$.ajax({
     		type: "POST",
     		dataType: "html",
