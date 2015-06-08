@@ -53,7 +53,7 @@
     
    
      <?php if(count($cafe->Sisters)>0){?>
-     	<div class="row">
+     	<div class="row" style="padding:15px;">
     		<ul class="list-group sisters-collapse collapse" id="<?=$cafe->ID?>_sisters">
     			<h2>Other Locations</h2>
       			<?php
