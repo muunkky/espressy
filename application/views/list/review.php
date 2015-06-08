@@ -111,7 +111,7 @@ $threestar = "";
 </div>
 
 
-<div class="row collapse update-collapse-<?=$cafe_id?>" id="update-collapse-<?=$cafe_id?>" style="background:black;color:white;">
+<div class="row collapse update-collapse-<?=$cafe_id?>" id="update-collapse-<?=$cafe_id?>">
 <?php
       $regions = $this->cafe_model->list_regions();
 			if(!function_exists(("comp_name"))){

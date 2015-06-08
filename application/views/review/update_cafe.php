@@ -113,7 +113,7 @@
 	</div>
 	<div class="form-group">
 		<h3>
-        	<a color="white" id="map_test_<?=$cafe->ID?>" target="_blank" href="http://maps.google.com/?q=<?=$cafe->Name?>,%20<?=$cafe->Address?>%20near%20<?=$cafe->Latitude?>,<?=$cafe->Longitude?>"
+        	<a id="map_test_<?=$cafe->ID?>" target="_blank" href="http://maps.google.com/?q=<?=$cafe->Name?>,%20<?=$cafe->Address?>%20near%20<?=$cafe->Latitude?>,<?=$cafe->Longitude?>"
         	style="padding:3px;color:black;margin-right:15px;border:1px solid #DDD;border-radius:5px;background-color:transparent;" class="btn">
         		<span class="glyphicon glyphicon-globe"></span> Test Map Link
         	</a>
