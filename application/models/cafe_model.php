@@ -407,7 +407,7 @@ EOD;
     $this->update($cafeID,$name,$region,$address,$latitude,$longitude,$hours,$chain);
     $cafe = $this->rise_cafe->GetCafe($cafeID);
     
-    $users = $this->rise_user->ListUserByEmail($email);
+    $users = $this->rise_user->ListUserByEmail(0,$email);
     $user = $user[0];
     $ratingID =$this->rise_user->NewRating($user->ID,$cafeID);
     $res = $this->rise_user->SetRating($ratingID, $rating, $comments, date("Y-m-d H:i:s"), $user->ID, $cafeID, false);
