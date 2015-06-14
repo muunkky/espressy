@@ -29,22 +29,19 @@
 					  }
 	  			?>
     		</span>
+    		<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
   	    	<h5>
 
   	    		
   	    		<?=$cafe->Hours?>
   	    		,&nbsp;
   	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away
-  	    		&nbsp;
-				<?=($cafe->Star_Rating==0?"<h3 style='margin: 0;'>":"")?>
-		        	<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">Map<span class="glyphicon glyphicon-globe"></span>
-		        	</a>
-	    		<?=($cafe->Star_Rating==0?"</h3>":"")?>
-      			<?php if(count($cafe->Sisters)>0){?>
+  	    		<?php if(count($cafe->Sisters)>0){?>
   					<a class="btn btn-xs" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="padding-bottom:3px;color:black;margin-top:-5px;border:1px solid #DDD;border-radius:5px;background-color:transparent;">+<?=(count($cafe->Sisters))?> Cafes</a>
 	  			<?php } ?>
 	  			
     	  	</h5>
+    	  	</a>
 
     </div>
     
