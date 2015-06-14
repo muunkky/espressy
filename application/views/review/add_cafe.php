@@ -7,7 +7,7 @@
 	  		<input type="text" class="form-control" id="cafe_name" required>
 		</label>
 		<label for="cafe_chain">Chain
-		<select id="cafe_chain" class="form-control" onchange='NewChain_<?=$cafe->ID?>(this.value);'>
+		<select id="cafe_chain" class="form-control" onchange='NewChain(this.value);'>
 				<option value="NULL">Not a Chain</option>
 				<option value="NEW">New Chain</option>
 				<option disabled>──────────</option>
@@ -15,13 +15,13 @@
 				
 				usort($chains,"comp_name");
 				foreach ($chains as $c) {?>
-				<option value="<?=$c->ID;?>" <?=$c->ID==$cafe->ChainID?"selected":""?> ><?=$c->Name;?></option>
+				<option value="<?=$c->ID;?>"><?=$c->Name;?></option>
 			<?php } ?>
 				
 		</select>
 		<input type="text" id="cafe_chain_new" name="cafe_chain_new" style="display:none;" placeholder="New Chain Name" />
 		<script type="text/javascript">
-			function NewChain_<?=$cafe->ID?>(val){
+			function NewChain(val){
 			 var element=document.getElementById('cafe_chain_new');
 			 if(val=='NEW')
 			   element.style.display='block';
