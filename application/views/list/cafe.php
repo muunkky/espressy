@@ -1,6 +1,6 @@
 <li class="list-group-item" style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>">
-	<div class="row">
-		<div class="col-xs-10">
+	<div class="text-center">
+
       		<?=($cafe->Star_Rating==0?"<h4>".$cafe->Name."</h4>":"<h2>".$cafe->Name."</h2>")?>
   	    	<h5><?=$cafe->Hours?>
       			<?php if(count($cafe->Sisters)>0){?>
@@ -39,8 +39,7 @@
 	  			?>
     		</span>
     	  	</h5>
-	    	
-        </div>
+
     </div>
     
    
