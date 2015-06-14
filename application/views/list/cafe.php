@@ -61,16 +61,16 @@
 					if($s->ID != $cafe->ID){?>
 						<li class="list-group-item">
 							<div class="row">
-								<div class="col-xs-10 text-left">
+								<div class="col-xs-9 text-left">
   									<h4><?=$s->Address;?></h4>
   									<h5><?=$s->Hours;?></h5>
       							</div>
-      							<div class="col-xs-2 text-center">
-					                <h3>
+      							<div class="col-xs-3 text-center">
+					                
 						            	<a target="_blank" href="http://maps.google.com/?q=<?=$s->Name;?>,%20<?=$s->Address;?>" style="padding:3px;color:black;margin-right:15px;border:1px solid #DDD;border-radius:5px;background-color:transparent;" class="btn">
 						            		<span class="glyphicon glyphicon-globe"></span> <?=round($s->Distance,1)?> km
 					                	</a>
-				                	</h3>
+				                	
 				                	<p style="color:#DDD;">
             						<?php
 		              					switch ($s->Star_Rating) {
