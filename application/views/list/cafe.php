@@ -35,7 +35,7 @@
   	    		
   	    		<?=$cafe->Hours?>
   	    		,&nbsp;
-  	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away
+  	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away, <u>Open Map</u>
   	    		
 	  			
     	  	</h5>
