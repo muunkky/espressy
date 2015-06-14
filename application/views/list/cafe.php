@@ -2,7 +2,7 @@
 	<div class="text-center">
 
       		<?=($cafe->Star_Rating==0?"<h4>".$cafe->Name."</h4>":"<h2>".$cafe->Name."</h2>")?>
-      		<span class="float-right">
+      		<span class="pull-right">
       			<?=($cafe->Star_Rating==0?"<h3 style='margin: 0;'>":"")?>
 		        	<a target="_blank" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>" style="padding:3px;color:black;margin-right:15px;border:1px solid #DDD;border-radius:5px;background-color:transparent;" class="btn">
 		        		Map <span class="glyphicon glyphicon-globe"></span>
