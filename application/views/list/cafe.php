@@ -11,7 +11,7 @@
 	        		<span class="glyphicon glyphicon-globe"></span> <?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km
 	        	</a>
 	    	<?=($cafe->Star_Rating==0?"</h3>":"")?>
-    		<p style="color:<?=($reviewed==true?'#868A08':'#DDD')?>;">
+    		<span style="color:<?=($reviewed==true?'#868A08':'#DDD')?>;">
 	  			<?php
 	  				switch ($cafe->Star_Rating) {
 						  case 3: ?>
@@ -37,7 +37,7 @@
 							  break;
 					  }
 	  			?>
-    		</p>
+    		</span>
     	  	</h5>
 	    	
         </div>
