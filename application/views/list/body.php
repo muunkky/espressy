@@ -1,4 +1,9 @@
-<body>
+<body style="
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;">
 
 	  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <script type="text/javascript" src="/js/bootstrap.min.js"></script>
