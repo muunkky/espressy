@@ -310,7 +310,6 @@ $( document ).on("submit", "#update_form_<?=$cafe->ID?>",function(e){
     	}
     	var cafe_name = $("#cafe_name_<?=$cafe->ID?>").val();
     	var cafe_chain = $("#cafe_chain_<?=$cafe->ID?>").val();
-    	var cafe_chain_new = $("#cafe_chain_new_<?=$cafe->ID?>").val();
     	var cafe_region = $("#cafe_region_<?=$cafe->ID?>").val();
     	var cafe_address = $("#cafe_address_<?=$cafe->ID?>").val();
     	var cafe_latitude = $("#cafe_latitude_<?=$cafe->ID?>").val();
@@ -341,7 +340,6 @@ $( document ).on("submit", "#update_form_<?=$cafe->ID?>",function(e){
     		    cafe_id: <?=$cafe->ID?>,
     			cafe_name: cafe_name,
     			cafe_chain: cafe_chain,
-    			cafe_chain_new: cafe_chain_new,
     			cafe_region: cafe_region,
     			cafe_address: cafe_address,
     			cafe_latitude: cafe_latitude,
