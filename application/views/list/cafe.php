@@ -51,7 +51,7 @@
      	<div class="row" style="padding:15px;">
     		<ul class="list-group sisters-collapse collapse" id="<?=$cafe->ID?>_sisters">
     			<h2>Other Locations</h2>
-      			<?php
+  				<?php
 				foreach($cafe->Sisters as $s){
 					if($s->ID != $cafe->ID){?>
 						<li class="list-group-item">
@@ -59,47 +59,47 @@
 								<div class="col-xs-9 text-left">
   									<h4><?=$s->Address;?></h4>
   									<h5><?=$s->Hours;?></h5>
-      							</div>
-      							<div class="col-xs-3 text-center">
-					                
-						            	<a target="_blank" href="http://maps.google.com/?q=<?=$s->Name;?>,%20<?=$s->Address;?>" style="padding:3px;color:black;margin-right:15px;border:1px solid #DDD;border-radius:5px;background-color:transparent;" class="btn">
-						            		<span class="glyphicon glyphicon-globe"></span> <?=round($s->Distance,1)?> km
-					                	</a>
-				                	
-				                	<p style="color:#DDD;">
-            						<?php
-		              					switch ($s->Star_Rating) {
-											  case 3: ?>
-												  <span class="glyphicon glyphicon-star"></span>
-												  <span class="glyphicon glyphicon-star"></span>
-												  <span class="glyphicon glyphicon-star"></span>
-												  <?php break;
-											  case 2: ?>
-												  <span class="glyphicon glyphicon-star"></span>
-												  <span class="glyphicon glyphicon-star"></span>
-												  <?php break; 
-											  case 1: ?>
-												  <span class="glyphicon glyphicon-star"></span>
-												  <?php break;
-											  case 0: ?>
-												  <span class="label label-default" style="background-color: #DDD">Honourable Mention</span>
-												  <?php break;
-											  case -1: ?>
-												  <span class="glyphicon glyphicon-star-empty"></span>
-												  <?php break;
-											  default:
-												  
-												  break;
-										}
-  									?>
-        							</p>
-					            </div>
-					        </div>
-			            </li>
+  								</div>
+  								<div class="col-xs-3 text-center">
+			                
+					            	<a target="_blank" href="http://maps.google.com/?q=<?=$s->Name;?>,%20<?=$s->Address;?>" style="padding:3px;color:black;margin-right:15px;border:1px solid #DDD;border-radius:5px;background-color:transparent;" class="btn">
+					            		<span class="glyphicon glyphicon-globe"></span> <?=round($s->Distance,1)?> km
+				                	</a>
+		                	
+		                			<p style="color:#DDD;">
+    									<?php
+			              					switch ($s->Star_Rating) {
+												  case 3: ?>
+													  <span class="glyphicon glyphicon-star"></span>
+													  <span class="glyphicon glyphicon-star"></span>
+													  <span class="glyphicon glyphicon-star"></span>
+													  <?php break;
+												  case 2: ?>
+													  <span class="glyphicon glyphicon-star"></span>
+													  <span class="glyphicon glyphicon-star"></span>
+													  <?php break; 
+												  case 1: ?>
+													  <span class="glyphicon glyphicon-star"></span>
+													  <?php break;
+												  case 0: ?>
+													  <span class="label label-default" style="background-color: #DDD">Honourable Mention</span>
+													  <?php break;
+												  case -1: ?>
+													  <span class="glyphicon glyphicon-star-empty"></span>
+													  <?php break;
+												  default:
+													  
+													  break;
+											}
+  										?>
+									</p>
+			            		</div>
+			        		</div>
+	            		</li>
 					<?php }
 				}?>
     		</ul>
-      </div>  <!--End Row-->
+   		</div>  <!--End Row-->
     <?php }
 		if($reviewer){
 			
