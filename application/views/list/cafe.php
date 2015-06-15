@@ -58,7 +58,7 @@
     	  	</a>
     	  	<h5>
 	    	  	<?php if(count($cafe->Sisters)>0){?>
-  					<a data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;">+ Show <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes</a>
+  					<a class="btn btn-xs" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">+ Show <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes</a>
   				<?php } ?>
     	  	</h5>
     	  	<h5>
