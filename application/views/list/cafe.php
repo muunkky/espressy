@@ -39,9 +39,11 @@
 	  			
     	  	</h5>
     	  	</a>
-    	  	<?php if(count($cafe->Sisters)>0){?>
-  					<a data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;">there are <?=(count($cafe->Sisters))?> other cafes, click here to see them</a>
+    	  	<h5>
+	    	  	<?php if(count($cafe->Sisters)>0){?>
+  					<a data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;">there are <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes, click here to see them</a>
   				<?php } ?>
+    	  	</h5>
     	  	<h5>
     	  	<?php
 	    	  	if($reviewer){
