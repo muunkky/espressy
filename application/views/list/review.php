@@ -25,7 +25,7 @@ $threestar = "";
 
 <a class="btn btn-xs" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="border:1px solid #DDD;border-radius:5px;background-color:transparent;">add a review</a>
 <a class="btn btn-xs" data-toggle="collapse" data-target=".reviews-<?=$cafe_id?>" style="border:1px solid #DDD;border-radius:5px;background-color:transparent;">see reviews</a>
-<a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".update-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">update this cafe's info</a>
+<a class="btn btn-xs" data-toggle="collapse" data-target=".update-collapse-<?=$cafe_id?>" style="border:1px solid #DDD;border-radius:5px;background-color:transparent;">update this cafe's info</a>
 
 <div class="row hidden" id="review-report-<?=$cafe_id?>">
 </div>
