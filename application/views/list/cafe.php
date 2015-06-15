@@ -1,3 +1,20 @@
+<style>
+	a:link {
+    text-decoration: none;
+	}
+	
+	a:visited {
+	    text-decoration: none;
+	}
+	
+	a:hover {
+	    text-decoration: none;
+	}
+	
+	a:active {
+	    text-decoration: none;
+	}
+</style>
 <li class="list-group-item" style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>">
 	<div class="text-center">
 
