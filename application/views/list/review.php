@@ -26,6 +26,8 @@ $threestar = "";
 <div class="row" style="background:#DDD;margin-bottom:0px;margin-bottom: 10px;">
 <a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">REVIEW
 </a>
+<a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".reviews-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">REVIEWS
+</a>
 <a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".update-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">UPDATE
 </a>
 </div>
@@ -123,4 +125,11 @@ $threestar = "";
       	$this->load->view("review/update_cafe",array("cafe"=>$cafe, "regions"=>$regions,"chains"=>$chains));
       ?>
     </div>
+</div>
+<div class="row collapse reviews-<?=$cafe_id?>" id="reviews-<?=$cafe_id?>">
+  <?php
+    if(!empty($cafe->Reviews)){
+      $this->load->view("list/cafe_review",array("cafe_id"=>$cafe->ID,"reviews"=>$cafe->Reviews));
+    }
+  ?>
 </div>

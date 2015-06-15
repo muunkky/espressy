@@ -104,9 +104,7 @@
 		if($reviewer){
 			
 	    	$this->load->view("list/review",array("cafe_id"=>$cafe->ID,"stars"=>$cafe->Star_Rating, "cafe"=>$cafe));
-	        if(!empty($cafe->Reviews)){
-	          $this->load->view("list/cafe_review",array("cafe_id"=>$cafe->ID,"reviews"=>$cafe->Reviews));
-	        }
+	        
 		}
     	
     ?>
