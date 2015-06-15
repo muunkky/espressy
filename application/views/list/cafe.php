@@ -54,8 +54,8 @@
     
    
      <?php if(count($cafe->Sisters)>0){?>
-     	<div class="row" style="padding:15px;">
-    		<ul class="list-group sisters-collapse collapse" id="<?=$cafe->ID?>_sisters">
+     	<div class="row sisters-collapse collapse" style="padding:15px;">
+    		<ul class="list-group" id="<?=$cafe->ID?>_sisters">
     			<h2>Other Locations</h2>
   				<?php
 				foreach($cafe->Sisters as $s){
