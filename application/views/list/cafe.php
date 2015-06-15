@@ -36,11 +36,12 @@
   	    		<?=$cafe->Hours?>
   	    		,&nbsp;
   	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away <span class="glyphicon glyphicon-globe"></span>
-	  			<?php if(count($cafe->Sisters)>0){?>
-  					<a class="btn btn-xs" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="padding-bottom:3px;color:black;margin-top:-5px;border:1px solid #DDD;border-radius:5px;background-color:transparent;">+<?=(count($cafe->Sisters))?> Cafes</a>
-  				<?php } ?>
+	  			
     	  	</h5>
     	  	</a>
+    	  	<?php if(count($cafe->Sisters)>0){?>
+  					<a data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;">there are <?=(count($cafe->Sisters))?> other cafes, click here to see them</a>
+  				<?php } ?>
     	  	<h5>
     	  	<?php
 	    	  	if($reviewer){
