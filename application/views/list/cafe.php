@@ -41,11 +41,13 @@
   				<?php } ?>
     	  	</h5>
     	  	</a>
+    	  	<h5>
     	  	<?php
 	    	  	if($reviewer){
 		    		$this->load->view("list/review",array("cafe_id"=>$cafe->ID,"stars"=>$cafe->Star_Rating, "cafe"=>$cafe));
 				}
 			?>
+			</h5>
 
 
     </div>
