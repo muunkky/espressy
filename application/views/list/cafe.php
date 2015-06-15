@@ -99,7 +99,7 @@
 					<?php }
 				}?>
     		</ul>
-   		</div>  <!--End Row-->
+   		
     <?php }
 		if($reviewer){
 			
@@ -108,4 +108,5 @@
 		}
     	
     ?>
+    </div>  <!--End Row-->
 </li>
