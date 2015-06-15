@@ -125,9 +125,9 @@ public function get_city_stars(){
   }else{
   	if(!is_null($reviewer)){
       $cafes = $this->cafe_model->list_cafes_by_distance($lat,$long,$date,$reviewer);
-	}else{
-		$cafes = $this->cafe_model->list_cafes_by_distance($lat,$long,$date);
-	}
+		}else{
+			$cafes = $this->cafe_model->list_cafes_by_distance($lat,$long,$date);
+		}
     $error_message = "";
   }
   $this->load->view('list/cafes',array('cafes'=>$cafes,"reviewer"=>$reviewer));

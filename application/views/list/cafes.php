@@ -1,7 +1,8 @@
 <ul class="list-group">
   <?php  
     foreach($cafes as $city=>$city_cafes){
-      if(count($city_cafes['black stars'])+count($city_cafes['zero stars'])+count($city_cafes['one star'])+count($city_cafes['two stars'])+count($city_cafes['three stars'])>0){
+      
+      if(count($city_cafes>0)){
       ?>
   <ul class="list-group city">
     <li class="list-group-item city">
@@ -103,6 +104,6 @@
     </ul>
   </ul>
   </ul>
-  <?}
+  <?php }
   }?>
 </ul>
