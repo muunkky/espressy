@@ -52,7 +52,7 @@
   	    		
   	    		<?=$cafe->Hours?>
   	    		,&nbsp;
-  	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away <span class="glyphicon glyphicon-globe"></span>
+  	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away (open map)
 	  			
     	  	</h5>
     	  	</a>
