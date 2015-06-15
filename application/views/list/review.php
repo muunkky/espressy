@@ -22,11 +22,13 @@ $threestar = "";
       $threestar = "checked";
   }
 ?>
-
-<a class="btn btn-xs" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">add a review</a>
-<a class="btn btn-xs" data-toggle="collapse" data-target=".reviews-<?=$cafe_id?>" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">see reviews</a>
-<a class="btn btn-xs" data-toggle="collapse" data-target=".update-collapse-<?=$cafe_id?>" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">update this cafe's info</a>
-
+<hr>
+<h4>Reviewer Options</h4>
+<h5>
+  <a class="btn btn-xs" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">add a review</a>
+  <a class="btn btn-xs" data-toggle="collapse" data-target=".reviews-<?=$cafe_id?>" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">see reviews</a>
+  <a class="btn btn-xs" data-toggle="collapse" data-target=".update-collapse-<?=$cafe_id?>" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">update this cafe's info</a>
+</h5>
 <div class="row hidden" id="review-report-<?=$cafe_id?>">
 </div>
 <div class="row collapse review-collapse-<?=$cafe_id?>" id="review-collapse-<?=$cafe_id?>" style="background:black;color:white;">
