@@ -23,10 +23,8 @@ $threestar = "";
   }
 ?>
 
-<div class="row" style="background:#DDD;margin-bottom:0px;margin-bottom: 10px;">
+<div class="row" style="background:#DDD;margin:0px;">
 <a class="btn btn-xs" data-toggle="collapse" data-target=".review-collapse-<?=$cafe_id?>" style="padding-bottom:3px;color:black;margin-top:-5px;border:1px solid #DDD;border-radius:5px;background-color:transparent;">add a review</a>
-
-</a>
 <a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".reviews-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">REVIEWS
 </a>
 <a class="btn btn-outline-inverse btn-lg text-center" data-toggle="collapse" data-target=".update-collapse-<?=$cafe_id?>" style="margin-right:15px;color:white;border:none;background-color:transparent;">UPDATE
