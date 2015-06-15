@@ -31,25 +31,22 @@
     		</span>
     		<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
   	    	<h5>
+
+  	    		
   	    		<?=$cafe->Hours?>
   	    		,&nbsp;
   	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away (<u>open a map</u>)
-  	    		&nbsp;
-  	    		<?php if(count($cafe->Sisters)>0){?>
-  				<a class="btn btn-xs" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="padding-bottom:3px;color:black;margin-top:-5px;border:1px solid #DDD;border-radius:5px;background-color:transparent;">+<?=(count($cafe->Sisters))?> Cafes</a>
+	  			<?php if(count($cafe->Sisters)>0){?>
+  					<a class="btn btn-xs" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="padding-bottom:3px;color:black;margin-top:-5px;border:1px solid #DDD;border-radius:5px;background-color:transparent;">+<?=(count($cafe->Sisters))?> Cafes</a>
   				<?php } ?>
     	  	</h5>
     	  	</a>
-    	  	
-  			
-  			<?php }
-				if($reviewer){
-					
-			    	$this->load->view("list/review",array("cafe_id"=>$cafe->ID,"stars"=>$cafe->Star_Rating, "cafe"=>$cafe));
-			        
+    	  	<?php
+	    	  	if($reviewer){
+		    		$this->load->view("list/review",array("cafe_id"=>$cafe->ID,"stars"=>$cafe->Star_Rating, "cafe"=>$cafe));
 				}
-		    	
-		    ?>
+			?>
+
 
     </div>
     
@@ -107,5 +104,5 @@
 				}?>
     		</ul>
    		</div>  <!--End Row-->
-    
+    <?php } ?>
 </li>
