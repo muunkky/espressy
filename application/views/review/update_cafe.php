@@ -140,7 +140,7 @@
 	  </label>
 	  
 	    <label>
-	      <button type="button" id="repeat_hours_tue_<?=$cafe->ID?>">Same as Above</button>
+	      <button type="button" class="btn btn-default" id="repeat_hours_tue_<?=$cafe->ID?>">Same</button>
 	    </label>
 
 	  <script>
