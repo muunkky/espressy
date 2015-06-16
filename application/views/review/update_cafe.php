@@ -140,18 +140,18 @@
 	  </label>
 	  
 	    <label>
-	      <input type="checkbox" id="repeat_hours_tue_<?=$cafe->ID?>"> Same as Above
+	      <button id="repeat_hours_tue_<?=$cafe->ID?>">Same as Above</button>
 	    </label>
 
 	  <script>
 	  	$( document ).ready(function(){
 	  		$( document ).on("click", "#repeat_hours_tue_<?=$cafe->ID?>",function(e){
-				$("#tue_open_<?=$cafe->ID?>").attr("disabled",(this.checked));
-		    	$("#tue_close_<?=$cafe->ID?>").attr("disabled",(this.checked));
-	    		if(this.checked){
+				//$("#tue_open_<?=$cafe->ID?>").attr("disabled",(this.checked));
+		    	//$("#tue_close_<?=$cafe->ID?>").attr("disabled",(this.checked));
+	    		//if(this.checked){
 		    		$("#tue_open_<?=$cafe->ID?>").val($("#mon_open_<?=$cafe->ID?>").val());
 		    		$("#tue_close_<?=$cafe->ID?>").val($("#mon_close_<?=$cafe->ID?>").val());
-	    		}
+	    		//}
     		});
     	});
 	  </script>
