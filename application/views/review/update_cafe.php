@@ -104,7 +104,7 @@
 			});
 		});
 	  </script>
-	</div>
+	
 	<div class="form-group">
 		<h3>
         	<a id="map_test_<?=$cafe->ID?>" target="_blank" href="http://maps.google.com/?q=<?=$cafe->Name?>,%20<?=$cafe->Address?>"
