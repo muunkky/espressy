@@ -31,7 +31,7 @@ $threestar = "";
 </h5>
 <div class="row hidden" id="review-report-<?=$cafe_id?>">
 </div>
-<div class="row collapse review-collapse-<?=$cafe_id?>" id="review-collapse-<?=$cafe_id?>" style="background:black;color:white;">
+<div class="row collapse review-collapse-<?=$cafe_id?> text-left" id="review-collapse-<?=$cafe_id?>" style="background:black;color:white;">
 <form role="form" id="<?=$cafe_id?>_review_form" class="review_form" style="margin-top:0;">
   <div class="form-group">
     <h4>
