@@ -53,13 +53,8 @@
 	    </label>
 	  </div>
 	</div>
-	<div class="form-group">
-	  <label for="cafe_latitude_<?=$cafe->ID?>">Latitude</label>
-	  <input type="text" class="form-control" id="cafe_latitude_<?=$cafe->ID?>" value="<?=$cafe->Latitude?>" required>
-	</div>
-	<div class="form-group">
-	  <label for="cafe_longitude_<?=$cafe->ID?>">Longitude</label>
-	  <input type="text" class="form-control" id="cafe_longitude_<?=$cafe->ID?>" value="<?=$cafe->Longitude?>" required>
+	<input type="hidden" class="form-control" id="cafe_latitude_<?=$cafe->ID?>" value="<?=$cafe->Latitude?>">
+	<input type="hidden" class="form-control" id="cafe_longitude_<?=$cafe->ID?>" value="<?=$cafe->Longitude?>">
 	  <script>
 	  	$( document ).ready(function(){
 		  	$("#use_my_lat_long_<?=$cafe->ID?>").click(function() {
@@ -77,9 +72,8 @@
 						$("#cafe_longitude_<?=$cafe->ID?>").val(lon);
 					}
 		  		}
-			    $("#cafe_latitude_<?=$cafe->ID?>").attr("disabled",(this.checked));
-			    $("#cafe_longitude_<?=$cafe->ID?>").attr("disabled",(this.checked));
-			    update_test_link_<?=$cafe->ID?>();
+
+			    //update_test_link_<?=$cafe->ID?>();
 
 			});
 		
