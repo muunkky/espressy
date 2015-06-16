@@ -139,8 +139,9 @@
 	  	<input type="time" class="form-control" id="tue_close_<?=$cafe->ID?>" name="tue_close_<?=$cafe->ID?>" placeholder="Tuesday Close" value="<?=date("H:i", strtotime($cafe->Tuesday_Close))?>" required>
 	  </label>
 	  
-
+	    <label>
 	      <button type="button" class="btn btn-default" id="repeat_hours_tue_<?=$cafe->ID?>">Same</button>
+	    </label>
 
 	  <script>
 	  	$( document ).ready(function(){
@@ -188,17 +189,17 @@
 	  	<input type="time" class="form-control" id="thu_close_<?=$cafe->ID?>" name="thu_close_<?=$cafe->ID?>" placeholder="Thursday Close" value="<?=date("H:i", strtotime($cafe->Thursday_Close))?>" required>
 	  </label>
 	    <label>
-	      <input type="checkbox" id="repeat_hours_thu_<?=$cafe->ID?>"> Same as Above
+	      <button type="button" class="btn btn-default" id="repeat_hours_thu_<?=$cafe->ID?>">Same</button>
 	    </label>
 	  <script>
 	  	$( document ).ready(function(){
 	  		$( document ).on("click", "#repeat_hours_thu_<?=$cafe->ID?>",function(e){
-	    		$("#thu_open_<?=$cafe->ID?>").attr("disabled",(this.checked));
-	    		$("#thu_close_<?=$cafe->ID?>").attr("disabled",(this.checked));
-	    		if(this.checked){
+	    		//$("#thu_open_<?=$cafe->ID?>").attr("disabled",(this.checked));
+	    		//$("#thu_close_<?=$cafe->ID?>").attr("disabled",(this.checked));
+	    		//if(this.checked){
 		    		$("#thu_open_<?=$cafe->ID?>").val($("#wed_open_<?=$cafe->ID?>").val());
 		    		$("#thu_close_<?=$cafe->ID?>").val($("#wed_close_<?=$cafe->ID?>").val());
-	    		}
+	    		//}
     		});
     	});
 	  </script>
@@ -212,18 +213,18 @@
 	  	<input type="time" class="form-control" id="fri_close_<?=$cafe->ID?>" name="fri_close_<?=$cafe->ID?>" placeholder="Friday Close" value="<?=date("H:i", strtotime($cafe->Friday_Close))?>" required>
 	  </label>
 	    <label>
-	      <input type="checkbox" id="repeat_hours_fri_<?=$cafe->ID?>"> Same as Above
+	      <button type="button" class="btn btn-default" id="repeat_hours_fri_<?=$cafe->ID?>">Same</button>
 	    </label>
 	  <br />
 	  <script>
 	  	$( document ).ready(function(){
 	  		$( document ).on("click", "#repeat_hours_fri_<?=$cafe->ID?>",function(e){
-	  			$("#fri_open_<?=$cafe->ID?>").attr("disabled",(this.checked));
-		    	$("#fri_close_<?=$cafe->ID?>").attr("disabled",(this.checked));
-	    		if(this.checked){
+	  			//$("#fri_open_<?=$cafe->ID?>").attr("disabled",(this.checked));
+		    	//$("#fri_close_<?=$cafe->ID?>").attr("disabled",(this.checked));
+	    		//if(this.checked){
 		    		$("#fri_open_<?=$cafe->ID?>").val($("#thu_open_<?=$cafe->ID?>").val());
 		    		$("#fri_close_<?=$cafe->ID?>").val($("#thu_close_<?=$cafe->ID?>").val());
-	    		}
+	    		//}
     		});
     	});
 	  </script>
@@ -236,17 +237,17 @@
 	  	<input type="time" class="form-control" id="sat_close_<?=$cafe->ID?>"  name="sat_close_<?=$cafe->ID?>" placeholder="Saturday Close" value="<?=date("H:i", strtotime($cafe->Saturday_Close))?>" required>
 	  </label>
 	    <label>
-	      <input type="checkbox" id="repeat_hours_sat_<?=$cafe->ID?>"> Same as Above
+	      <button type="button" class="btn btn-default" id="repeat_hours_sat_<?=$cafe->ID?>">Same</button>
 	    </label>
 	  <script>
 	  	$( document ).ready(function(){
 	  		$( document ).on("click", "#repeat_hours_sat_<?=$cafe->ID?>",function(e){
-	  			$("#sat_open_<?=$cafe->ID?>").attr("disabled",(this.checked));
-		    	$("#sat_close_<?=$cafe->ID?>").attr("disabled",(this.checked));
-	  			if(this.checked){
+	  			//$("#sat_open_<?=$cafe->ID?>").attr("disabled",(this.checked));
+		    	//$("#sat_close_<?=$cafe->ID?>").attr("disabled",(this.checked));
+	  			//if(this.checked){
 		    		$("#sat_open_<?=$cafe->ID?>").val($("#fri_open_<?=$cafe->ID?>").val());
 		    		$("#sat_close_<?=$cafe->ID?>").val($("#fri_close_<?=$cafe->ID?>").val());
-	    		}
+	    		//}
     		});
     	});
 	  </script>
@@ -260,17 +261,17 @@
 	  	<input type="time" class="form-control" id="sun_close_<?=$cafe->ID?>" name="sun_close_<?=$cafe->ID?>" placeholder="Sunday Close" value="<?=date("H:i", strtotime($cafe->Sunday_Close))?>" required>
 	  </label>
 	    <label>
-	      <input type="checkbox" id="repeat_hours_sun_<?=$cafe->ID?>"> Same as Above
+	      <button type="button" class="btn btn-default" id="repeat_hours_sun_<?=$cafe->ID?>">Same</button>
 	    </label>
 	  <script>
 	  	$( document ).ready(function(){
 	  		$( document ).on("click", "#repeat_hours_sun_<?=$cafe->ID?>",function(e){
-	    		$("#sun_open_<?=$cafe->ID?>").attr("disabled",(this.checked));
-		    	$("#sun_close_<?=$cafe->ID?>").attr("disabled",(this.checked));
-	    		if(this.checked){
+	    	//	$("#sun_open_<?=$cafe->ID?>").attr("disabled",(this.checked));
+		    //	$("#sun_close_<?=$cafe->ID?>").attr("disabled",(this.checked));
+	    	//	if(this.checked){
 		    		$("#sun_open_<?=$cafe->ID?>").val($("#sat_open_<?=$cafe->ID?>").val());
 		    		$("#sun_close_<?=$cafe->ID?>").val($("#sat_close_<?=$cafe->ID?>").val());
-	    		}
+	    	//	}
     		});
     	});
 	  </script>
