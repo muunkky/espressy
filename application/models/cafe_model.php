@@ -141,7 +141,7 @@ public function list_cities_by_distance($lat1,$lon1){
 		foreach($cafes as $c){
 			$stars[$c->Star_Rating]=$stars[$c->Star_Rating]+1;
 		}
-		
+		$city_dist[$distance]->Unrated = $stars[-2];
 		$city_dist[$distance]->Black_Stars = $stars[-1];
 		$city_dist[$distance]->Zero_Stars = $stars[0];
 		$city_dist[$distance]->One_Star = $stars[1];

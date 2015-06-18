@@ -83,7 +83,12 @@ class Welcome extends CI_Controller {
 		}else{
 			$cities = $this->cafe_model->list_cities_by_distance($lat,$long);
 		}
-		$this->load->view('list/cities',array('cities'=>$cities,"latitude"=>$lat,"longitude"=>$long));
+		if($user){
+			$reviewer = $user['reviewer'];
+			}else{
+				$reviewer = false;
+			}
+		$this->load->view('list/cities',array('cities'=>$cities,"latitude"=>$lat,"longitude"=>$long,"reviewer"=>$reviewer));
 		$city_output = $this->output->get_output();
 		$this->output->set_output(null);
 		print_r(json_encode(array("cities"=>$city_output,"error_message"=>"")));
@@ -104,6 +109,10 @@ public function get_city_stars(){
 	//print_r_pre(array("latitude"=>$latitude,"longitude"=>$longitude,"date"=>$date,"reviewer"=>$reviewer,"regionid"=>$RegionID));
 	//exit;
 	$cafes = $this->cafe_model->get_city_cafes_by_distance($latitude, $longitude, $RegionID,$date);
+	echo "<pre>";
+	print_r($cafes);
+	echo "</pre>";
+	exit;
 	$this->load->view("list/city_stars",array("city_cafes"=>$cafes,"reviewer"=>$reviewer));
 }
  // public function cafe_list(){
