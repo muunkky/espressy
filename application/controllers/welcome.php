@@ -83,6 +83,7 @@ class Welcome extends CI_Controller {
 		}else{
 			$cities = $this->cafe_model->list_cities_by_distance($lat,$long);
 		}
+		$user = $this->get_user();
 		if($user){
 			$reviewer = $user['reviewer'];
 			}else{
