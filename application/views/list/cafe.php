@@ -1,3 +1,5 @@
+<?php if(!(($cafe->Star_Rating!=-2)&&($reviewer))){?>
+
 <style>
 	a:link {
     text-decoration: none;
@@ -15,6 +17,7 @@
 	    text-decoration: none;
 	}
 </style>
+
 <li class="list-group-item" style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:5px solid #DDD">
 	<div class="text-center">
 
@@ -39,6 +42,9 @@
 							  <?php break;
 						  case -1: ?>
 							  <span class="glyphicon glyphicon-star-empty"></span>
+							  <?php break;
+						case -2: ?>
+							  <span class="glyphicon glyphicon-question-sign"></span>
 							  <?php break;
 						  default:
 							  
@@ -113,6 +119,9 @@
 												  case -1: ?>
 													  <span class="glyphicon glyphicon-star-empty"></span>
 													  <?php break;
+												case -2: ?>
+													  <span class="glyphicon glyphicon-question-sign"></span>
+													  <?php break;
 												  default:
 													  
 													  break;
@@ -128,3 +137,5 @@
    		</div>  <!--End Row-->
     <?php } ?>
 </li>
+
+<?php } ?>
