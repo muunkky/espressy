@@ -1,4 +1,4 @@
-<?php if(!(!$reviewer&&$cafe->Star_Rating==-2)){?>
+<?php if(!(!$reviewer&&($cafe->Star_Rating==-2)||!$reviewed)){?>
 
 <style>
 	a:link {
@@ -23,7 +23,9 @@
 
       		<?=($cafe->Star_Rating==0?"<h4>".$cafe->Name."</h4>":"<h2>".$cafe->Name."</h2>")?>
     		<span style="color:<?=($reviewed==true?'#868A08':'#DDD')?>;">
-	  			<?php
+    			<?php if($reviewed){?>
+    				?
+    			<?php }else{
 	  				switch ($cafe->Star_Rating) {
 						  case 3: ?>
 							  <span class="glyphicon glyphicon-star"></span>
@@ -50,7 +52,7 @@
 							  
 							  break;
 					  }
-	  			?>
+    			} ?>
     		</span>
     		<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
   	    	<h5>
