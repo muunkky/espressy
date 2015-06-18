@@ -3,7 +3,7 @@
 	<div id="longitude" style="display: none;padding:0;margin:0;"><?=$longitude?></div>
   <?php  
     foreach($cities as $city){
-    	$numcafes = $city->Black_Stars+$city->Zero_Stars+$city->One_Star+$city->Two_Stars+$city->Three_Stars+$reviewer?$city->Unconfirmed:0;
+    	$numcafes = $city->Black_Stars+$city->Zero_Stars+$city->One_Star+$city->Two_Stars+$city->Three_Stars;//+$reviewer?$city->Unconfirmed:0;
       if($numcafes||true){
       ?>
   <ul class="list-group city">
