@@ -1,4 +1,4 @@
-<?php {?>
+<?php echo "banana"?>
 
 <style>
 	a:link {
@@ -138,4 +138,4 @@
     <?php } ?>
 </li>
 
-<?php } ?>
+<?php  ?>
