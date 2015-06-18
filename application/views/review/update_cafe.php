@@ -158,7 +158,7 @@
 		Wednesday Close
 	  	<input type="time" class="form-control" id="wed_close_<?=$cafe->ID?>" name="wed_close_<?=$cafe->ID?>" placeholder="Wednesday Close" value="<?=date("H:i", strtotime($cafe->Wednesday_Open))?>" required>
 	  </label>
-	      <button type="button" class="btn btn-dafault" id="repeat_hours_wed_<?=$cafe->ID?>">Same</button>
+	      <button type="button" class="btn btn-default" id="repeat_hours_wed_<?=$cafe->ID?>">Same</button>
 	  <script>
 	  	$( document ).ready(function(){
 	  		$( document ).on("click", "#repeat_hours_wed_<?=$cafe->ID?>",function(e){
