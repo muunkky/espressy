@@ -134,9 +134,8 @@
 	  	<input type="time" class="form-control" id="tue_close_<?=$cafe->ID?>" name="tue_close_<?=$cafe->ID?>" placeholder="Tuesday Close" value="<?=date("H:i", strtotime($cafe->Tuesday_Close))?>" required>
 	  </label>
 	  
-	    <label>
+	    
 	      <button type="button" class="btn btn-default" id="repeat_hours_tue_<?=$cafe->ID?>">Same</button>
-	    </label>
 
 	  <script>
 	  	$( document ).ready(function(){
@@ -159,9 +158,7 @@
 		Wednesday Close
 	  	<input type="time" class="form-control" id="wed_close_<?=$cafe->ID?>" name="wed_close_<?=$cafe->ID?>" placeholder="Wednesday Close" value="<?=date("H:i", strtotime($cafe->Wednesday_Open))?>" required>
 	  </label>
-	    <label>
 	      <button type="button" class="btn btn-dafault" id="repeat_hours_wed_<?=$cafe->ID?>">Same</button>
-	    </label>
 	  <script>
 	  	$( document ).ready(function(){
 	  		$( document ).on("click", "#repeat_hours_wed_<?=$cafe->ID?>",function(e){
@@ -183,9 +180,7 @@
 		Thursday Close
 	  	<input type="time" class="form-control" id="thu_close_<?=$cafe->ID?>" name="thu_close_<?=$cafe->ID?>" placeholder="Thursday Close" value="<?=date("H:i", strtotime($cafe->Thursday_Close))?>" required>
 	  </label>
-	    <label>
 	      <button type="button" class="btn btn-default" id="repeat_hours_thu_<?=$cafe->ID?>">Same</button>
-	    </label>
 	  <script>
 	  	$( document ).ready(function(){
 	  		$( document ).on("click", "#repeat_hours_thu_<?=$cafe->ID?>",function(e){
@@ -207,9 +202,7 @@
 		Friday Close
 	  	<input type="time" class="form-control" id="fri_close_<?=$cafe->ID?>" name="fri_close_<?=$cafe->ID?>" placeholder="Friday Close" value="<?=date("H:i", strtotime($cafe->Friday_Close))?>" required>
 	  </label>
-	    <label>
 	      <button type="button" class="btn btn-default" id="repeat_hours_fri_<?=$cafe->ID?>">Same</button>
-	    </label>
 	  <br />
 	  <script>
 	  	$( document ).ready(function(){
@@ -231,9 +224,7 @@
 		Saturday Close
 	  	<input type="time" class="form-control" id="sat_close_<?=$cafe->ID?>"  name="sat_close_<?=$cafe->ID?>" placeholder="Saturday Close" value="<?=date("H:i", strtotime($cafe->Saturday_Close))?>" required>
 	  </label>
-	    <label>
 	      <button type="button" class="btn btn-default" id="repeat_hours_sat_<?=$cafe->ID?>">Same</button>
-	    </label>
 	  <script>
 	  	$( document ).ready(function(){
 	  		$( document ).on("click", "#repeat_hours_sat_<?=$cafe->ID?>",function(e){
@@ -255,9 +246,7 @@
 		Sunday Close
 	  	<input type="time" class="form-control" id="sun_close_<?=$cafe->ID?>" name="sun_close_<?=$cafe->ID?>" placeholder="Sunday Close" value="<?=date("H:i", strtotime($cafe->Sunday_Close))?>" required>
 	  </label>
-	    <label>
 	      <button type="button" class="btn btn-default" id="repeat_hours_sun_<?=$cafe->ID?>">Same</button>
-	    </label>
 	  <script>
 	  	$( document ).ready(function(){
 	  		$( document ).on("click", "#repeat_hours_sun_<?=$cafe->ID?>",function(e){
