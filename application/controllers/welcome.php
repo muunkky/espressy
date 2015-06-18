@@ -110,10 +110,7 @@ public function get_city_stars(){
 	//print_r_pre(array("latitude"=>$latitude,"longitude"=>$longitude,"date"=>$date,"reviewer"=>$reviewer,"regionid"=>$RegionID));
 	//exit;
 	$cafes = $this->cafe_model->get_city_cafes_by_distance($latitude, $longitude, $RegionID,$date);
-	echo "<pre>";
-	print_r($cafes);
-	echo "</pre>";
-	exit;
+
 	$this->load->view("list/city_stars",array("city_cafes"=>$cafes,"reviewer"=>$reviewer));
 }
  // public function cafe_list(){

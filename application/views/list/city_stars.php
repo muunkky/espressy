@@ -3,7 +3,7 @@
       	$HM=0;
 		$reviewed=false;
         foreach($city_cafes as $cafe){
-          	if($cafe->Star_Rating>0){
+          	if($cafe->Star_Rating!=0&&$cafe->Star_Rating!=-1){
           		if(isset($cafe->Reviews) && !empty($cafe->Reviews)){
           			if(count($cafe->Reviews)>0){
           				$reviewed = true;
