@@ -56,8 +56,9 @@ $threestar = "";
   			}
 			}
 			usort($regions,"comp_name");
-			usort($chains,"comp_name");
+			
 			$chains = $this->cafe_model->list_chains();
+      usort($chains,"comp_name");
       	$this->load->view("review/update_cafe",array("cafe"=>$cafe, "regions"=>$regions,"chains"=>$chains));
       ?>
     </div>
