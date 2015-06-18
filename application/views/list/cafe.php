@@ -23,7 +23,7 @@
 
       		<?=($cafe->Star_Rating==0?"<h4>".$cafe->Name."</h4>":"<h2>".$cafe->Name."</h2>")?>
     		<span style="color:<?=($reviewed==true?'#868A08':'#DDD')?>;">
-    			<?php if($reviewed){?>
+    			<?php if(!$reviewed){?>
     				?
     			<?php }else{
 	  				switch ($cafe->Star_Rating) {
