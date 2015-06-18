@@ -326,14 +326,14 @@ public function list_cafes_by_distance($lat1,$lon1,$date,$reviewer=false){
 				
 			}
 			if($categorize_by_stars){
-				if(!is_null($cafe->ChainID)){
-					if(!isset($city_chains[$cafe->Star_Rating]) || !in_array($cafe->ChainID, $city_chains[$cafe->Star_Rating])){
-						$city_chains[$cafe->Star_Rating][] = $cafe->ChainID;
-						$city_cafes[$cafe->Star_Rating][$cafe->ID] = $cafe;
-					}
-				}else{
-					$city_cafes[$cafe->Star_Rating][$cafe->ID] = $cafe;
-				}
+				// if(!is_null($cafe->ChainID)){
+				// 	if(!isset($city_chains[$cafe->Star_Rating]) || !in_array($cafe->ChainID, $city_chains[$cafe->Star_Rating])){
+				// 		$city_chains[$cafe->Star_Rating][] = $cafe->ChainID;
+				// 		$city_cafes[$cafe->Star_Rating][$cafe->ID] = $cafe;
+				// 	}
+				// }else{
+				// 	$city_cafes[$cafe->Star_Rating][$cafe->ID] = $cafe;
+				// }
 			}else{
 				if(!is_null($cafe->ChainID)){
 					if(!isset($city_chains) || !in_array($cafe->ChainID, $city_chains)){
