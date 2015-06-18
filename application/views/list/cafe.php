@@ -1,4 +1,14 @@
-<?php if(!(!$reviewer&&($cafe->Star_Rating==-2)||!$reviewed)){?>
+<?php 
+$hide = false;
+if(!$reviewer){
+	if($cafe->Star_Rating==-2){
+		$hide=true;
+	}elseif(!$reviewed){
+		$hide=true;
+	}
+}
+
+if(!$hide){?>
 
 <style>
 	a:link {
