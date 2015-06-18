@@ -106,35 +106,35 @@ public function get_city_stars(){
 	$cafes = $this->cafe_model->get_city_cafes_by_distance($latitude, $longitude, $RegionID,$date);
 	$this->load->view("list/city_stars",array("city_cafes"=>$cafes,"reviewer"=>$reviewer));
 }
-  public function cafe_list(){
+ // public function cafe_list(){
   	
-    $lat = $this->input->post('latitude');
-    $long = $this->input->post('longitude');
-	$date = $this->input->post('date');
-	$user = $this->get_user();
-	if($user){
-		$reviewer = $user['reviewer'];
-	}else{
-		$reviewer = false;
-	}
+ //   $lat = $this->input->post('latitude');
+ //   $long = $this->input->post('longitude');
+	// $date = $this->input->post('date');
+	// $user = $this->get_user();
+	// if($user){
+	// 	$reviewer = $user['reviewer'];
+	// }else{
+	// 	$reviewer = false;
+	// }
 	
-    $this->load->model('cafe_model');
-  if(!$lat||!$long){
-    $cafes = $this->cafe_model->list_cafes_alphabetically($date,$reviewer);
-    $error_message = $this->location_unavailable();
-  }else{
-  	if(!is_null($reviewer)){
-      $cafes = $this->cafe_model->list_cafes_by_distance($lat,$long,$date,$reviewer);
-		}else{
-			$cafes = $this->cafe_model->list_cafes_by_distance($lat,$long,$date);
-		}
-    $error_message = "";
-  }
-  //$this->load->view('list/cafes',array('cafes'=>$cafes,"reviewer"=>$reviewer));
-  $cafe_list = $this->output->get_output();
-  $this->output->set_output(null);
-  print_r(json_encode(array("cafe_list"=>$cafe_list,"error_message"=>$error_message)));
-  }
+ //   $this->load->model('cafe_model');
+ // if(!$lat||!$long){
+ //   $cafes = $this->cafe_model->list_cafes_alphabetically($date,$reviewer);
+ //   $error_message = $this->location_unavailable();
+ // }else{
+ // 	if(!is_null($reviewer)){
+ //     $cafes = $this->cafe_model->list_cafes_by_distance($lat,$long,$date,$reviewer);
+	// 	}else{
+	// 		$cafes = $this->cafe_model->list_cafes_by_distance($lat,$long,$date);
+	// 	}
+ //   $error_message = "";
+ // }
+ // //$this->load->view('list/cafes',array('cafes'=>$cafes,"reviewer"=>$reviewer));
+ // $cafe_list = $this->output->get_output();
+ // $this->output->set_output(null);
+ // print_r(json_encode(array("cafe_list"=>$cafe_list,"error_message"=>$error_message)));
+ // }
   public function location_unavailable(){
     $this->load->view('list/location_unavailable');
   $message = $this->output->get_output();
