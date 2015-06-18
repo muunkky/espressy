@@ -1,4 +1,4 @@
-<?php echo "banana"?>
+<?php if(!(!$reviewer&&$cafe->Star_Rating==-2)){?>
 
 <style>
 	a:link {
@@ -138,4 +138,4 @@
     <?php } ?>
 </li>
 
-<?php  ?>
+<?php } ?>
