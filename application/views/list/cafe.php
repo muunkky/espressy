@@ -1,4 +1,4 @@
-<?php if(!(($cafe->Star_Rating==-2)&&!($reviewer))){?>
+<?php {?>
 
 <style>
 	a:link {
