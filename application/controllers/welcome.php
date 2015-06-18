@@ -88,24 +88,24 @@ class Welcome extends CI_Controller {
 		$this->output->set_output(null);
 		print_r(json_encode(array("cities"=>$city_output,"error_message"=>"")));
 	}
-// public function get_city_stars(){
-// 	$RegionID = $this->input->post("cityID");
+public function get_city_stars(){
+	$RegionID = $this->input->post("cityID");
 	
-// 	$latitude = $this->session->userdata("latitude");
-// 	$longitude = $this->session->userdata("longitude");
-// 	$date = $this->session->userdata("date");
-// 	$user = $this->get_user();
-// 	if($user){
-// 		$reviewer = $user['reviewer'];
-// 	}else{
-// 		$reviewer = false;
-// 	}
-// 	$this->load->model('cafe_model');
-// 	//print_r_pre(array("latitude"=>$latitude,"longitude"=>$longitude,"date"=>$date,"reviewer"=>$reviewer,"regionid"=>$RegionID));
-// 	//exit;
-// 	$cafes = $this->cafe_model->get_city_cafes_by_distance($latitude, $longitude, $RegionID,$date);
-// 	$this->load->view("list/city_stars",array("city_cafes"=>$cafes,"reviewer"=>$reviewer));
-// }
+	$latitude = $this->session->userdata("latitude");
+	$longitude = $this->session->userdata("longitude");
+	$date = $this->session->userdata("date");
+	$user = $this->get_user();
+	if($user){
+		$reviewer = $user['reviewer'];
+	}else{
+		$reviewer = false;
+	}
+	$this->load->model('cafe_model');
+	//print_r_pre(array("latitude"=>$latitude,"longitude"=>$longitude,"date"=>$date,"reviewer"=>$reviewer,"regionid"=>$RegionID));
+	//exit;
+	$cafes = $this->cafe_model->get_city_cafes_by_distance($latitude, $longitude, $RegionID,$date);
+	$this->load->view("list/city_stars",array("city_cafes"=>$cafes,"reviewer"=>$reviewer));
+}
   public function cafe_list(){
   	
     $lat = $this->input->post('latitude');
@@ -130,7 +130,7 @@ class Welcome extends CI_Controller {
 		}
     $error_message = "";
   }
-  $this->load->view('list/cafes',array('cafes'=>$cafes,"reviewer"=>$reviewer));
+  //$this->load->view('list/cafes',array('cafes'=>$cafes,"reviewer"=>$reviewer));
   $cafe_list = $this->output->get_output();
   $this->output->set_output(null);
   print_r(json_encode(array("cafe_list"=>$cafe_list,"error_message"=>$error_message)));
