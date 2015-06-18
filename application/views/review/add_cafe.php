@@ -278,7 +278,7 @@
 	<legend>Cafe Rating</legend>
 	<div class="form-group">
           <input style="margin-left:25px;" type="radio" name="newcafe_review_radio" id="newcafe_review_unconfirmed" value="-2" checked required>
-          <label class="radio-inline"><span class="glyphicon glyphicon-question-sign"></span> Unconfirmed
+          Unconfirmed
           </label>
 	</div>
 	<div class="form-group">

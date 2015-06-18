@@ -5,7 +5,7 @@
           <div class="col-md-12">
             <div class="form-group">
           <input style="margin-left:25px;" type="radio" name="<?=$cafe_id?>_review_radio" id="<?=$cafe_id?>_review_unconfirmed" value="-2" <?=$stars['-2']?>>
-          <label class="radio-inline" ><span class="glyphicon glyphicon-question-sign"></span> Unconfirmed
+          Unconfirmed
           </label>
           <div class="form-group">
           <input style="margin-left:25px;" type="radio" name="<?=$cafe_id?>_review_radio" id="<?=$cafe_id?>_review_threestar" value="3" <?=$stars['3']?>>

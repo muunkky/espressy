@@ -44,7 +44,7 @@
 							  <span class="glyphicon glyphicon-star-empty"></span>
 							  <?php break;
 						case -2: ?>
-							  <span class="glyphicon glyphicon-question-sign"></span>
+							  ?
 							  <?php break;
 						  default:
 							  
@@ -120,7 +120,7 @@
 													  <span class="glyphicon glyphicon-star-empty"></span>
 													  <?php break;
 												case -2: ?>
-													  <span class="glyphicon glyphicon-question-sign"></span>
+													  ?
 													  <?php break;
 												  default:
 													  
