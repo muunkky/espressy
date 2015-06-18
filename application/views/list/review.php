@@ -1,4 +1,5 @@
 <?php
+$unconfirmed = "";
 $blackstar = "";
 $honorable = "";
 $onestar = "";
