@@ -151,129 +151,129 @@ public function list_cities_by_distance($lat1,$lon1){
     ksort($city_dist);
 	return $city_dist;
 }
-public function list_cafes_by_distance($lat1,$lon1,$date,$reviewer=false){
-    $city_list = array();
-    $city_dist = array();
-    $cities = $this->rise_cafe->ListRegion(0);
-    $i = 0;
-    foreach ($cities as $city) {
+// public function list_cafes_by_distance($lat1,$lon1,$date,$reviewer=false){
+//     $city_list = array();
+//     $city_dist = array();
+//     $cities = $this->rise_cafe->ListRegion(0);
+//     $i = 0;
+//     foreach ($cities as $city) {
       
-      if($lat1*$lon1!=0){
-        $lat2 = $city->Center_Latitude;
-        $lon2 = $city->Center_Longitude;
-        $distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
-      }else{
-        $distance = $i;
-        $i++;
-      }
-      $city_dist[$distance]=$city;
-    }
-    ksort($city_dist);
-    foreach($city_dist as $dist=>$city){
+//       if($lat1*$lon1!=0){
+//         $lat2 = $city->Center_Latitude;
+//         $lon2 = $city->Center_Longitude;
+//         $distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
+//       }else{
+//         $distance = $i;
+//         $i++;
+//       }
+//       $city_dist[$distance]=$city;
+//     }
+//     ksort($city_dist);
+//     foreach($city_dist as $dist=>$city){
       
-      $city_cafes = $this->rise_cafe->ListCafeByRegion(0, $city->ID);
-      $stars = array();
-      $black_stars = array();
-      $zero_stars = array();
-      $one_star = array();
-      $two_stars = array();
-      $three_stars = array();
+//       $city_cafes = $this->rise_cafe->ListCafeByRegion(0, $city->ID);
+//       $stars = array();
+//       $black_stars = array();
+//       $zero_stars = array();
+//       $one_star = array();
+//       $two_stars = array();
+//       $three_stars = array();
       
-      for($i=0;$i<count($city_cafes);$i++){
-        $city_cafes[$i] = (object) array_merge( (array)$city_cafes[$i], array( 'Distance' => '0' ) );
-        $city_cafes[$i]= (object) array_merge( (array)$city_cafes[$i], array( 'Reviews' => array() ) );
-        $city_cafes[$i]= (object) array_merge( (array)$city_cafes[$i], array( 'Hours' => '' ) );
-        $city_cafes[$i]= (object) array_merge( (array)$city_cafes[$i], array( 'Sisters' => array() ) );
-        $city_cafes[$i]->Hours = $this->getHours($city_cafes[$i],$date);
-		if($lat1*$lon1!=0){
-          $lat2 = $city_cafes[$i]->Latitude;
-          $lon2 = $city_cafes[$i]->Longitude;
-          $city_cafes[$i]->Distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
-        }else{
-          $city_cafes[$i]->Distance = $i;
-          $i++;
-        }
-      }
+//       for($i=0;$i<count($city_cafes);$i++){
+//         $city_cafes[$i] = (object) array_merge( (array)$city_cafes[$i], array( 'Distance' => '0' ) );
+//         $city_cafes[$i]= (object) array_merge( (array)$city_cafes[$i], array( 'Reviews' => array() ) );
+//         $city_cafes[$i]= (object) array_merge( (array)$city_cafes[$i], array( 'Hours' => '' ) );
+//         $city_cafes[$i]= (object) array_merge( (array)$city_cafes[$i], array( 'Sisters' => array() ) );
+//         $city_cafes[$i]->Hours = $this->getHours($city_cafes[$i],$date);
+// 		if($lat1*$lon1!=0){
+//           $lat2 = $city_cafes[$i]->Latitude;
+//           $lon2 = $city_cafes[$i]->Longitude;
+//           $city_cafes[$i]->Distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
+//         }else{
+//           $city_cafes[$i]->Distance = $i;
+//           $i++;
+//         }
+//       }
       
-      foreach($city_cafes as $cafe){
+//       foreach($city_cafes as $cafe){
     
         
-          $chain=null;
-          if($cafe->ChainID){
-            $chain = $this->rise_cafe->GetChain($cafe->ChainID);
-          }
-          if($chain){
-            $cafe->Sisters = $this->rise_cafe->ListCafeByChain(0, $chain->ID);
+//           $chain=null;
+//           if($cafe->ChainID){
+//             $chain = $this->rise_cafe->GetChain($cafe->ChainID);
+//           }
+//           if($chain){
+//             $cafe->Sisters = $this->rise_cafe->ListCafeByChain(0, $chain->ID);
 			  
-            for($i=0;$i<count($cafe->Sisters);$i++){
-              $cafe->Sisters[$i]= (object) array_merge( (array)$cafe->Sisters[$i], array( 'Hours' => '' ) );
-              $cafe->Sisters[$i]->Hours = $this->getHours($cafe->Sisters[$i],$date);
-      			  $cafe->Sisters[$i] = (object) array_merge( (array)$cafe->Sisters[$i], array( 'Distance' => '0' ) );
-      			  if($lat1*$lon1!=0){
-  		          $lat2 = $cafe->Sisters[$i]->Latitude;
-  		          $lon2 = $cafe->Sisters[$i]->Longitude;
-  		          $cafe->Sisters[$i]->Distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
-  		        }else{
-  		          $cafe->Sisters[$i]->Distance = $i;
-  		          $i++;
-		          }
-              foreach($this->rise_user->ListRatingByCafe(0,$cafe->Sisters[$i]->ID) as $r){
-                $r = (object) array_merge( (array)$r, array( 'Address' => "" ) );
-                $r->Address = $cafe->Sisters[$i]->Address;
-                if($reviewer){
-                $cafe->Reviews[] = $r;
-                }
-              }
-            }
-          }else{
-            if($reviewer){
-              $cafe->Reviews[] = $this->rise_user->ListRatingByCafe(0,$cafe->ID);
-            }
-          }
+//             for($i=0;$i<count($cafe->Sisters);$i++){
+//               $cafe->Sisters[$i]= (object) array_merge( (array)$cafe->Sisters[$i], array( 'Hours' => '' ) );
+//               $cafe->Sisters[$i]->Hours = $this->getHours($cafe->Sisters[$i],$date);
+//       			  $cafe->Sisters[$i] = (object) array_merge( (array)$cafe->Sisters[$i], array( 'Distance' => '0' ) );
+//       			  if($lat1*$lon1!=0){
+//   		          $lat2 = $cafe->Sisters[$i]->Latitude;
+//   		          $lon2 = $cafe->Sisters[$i]->Longitude;
+//   		          $cafe->Sisters[$i]->Distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
+//   		        }else{
+//   		          $cafe->Sisters[$i]->Distance = $i;
+//   		          $i++;
+// 		          }
+//               foreach($this->rise_user->ListRatingByCafe(0,$cafe->Sisters[$i]->ID) as $r){
+//                 $r = (object) array_merge( (array)$r, array( 'Address' => "" ) );
+//                 $r->Address = $cafe->Sisters[$i]->Address;
+//                 if($reviewer){
+//                 $cafe->Reviews[] = $r;
+//                 }
+//               }
+//             }
+//           }else{
+//             if($reviewer){
+//               $cafe->Reviews[] = $this->rise_user->ListRatingByCafe(0,$cafe->ID);
+//             }
+//           }
         
         
-        switch($cafe->Star_Rating){
-          case -1:
-            $black_stars[]=$cafe;
-            break;
-          case 0:
-            $zero_stars[]=$cafe;
-          break;
-          case 1:
-          $one_star[]=$cafe;
-          break;
-          case 2:
-          $two_stars[]=$cafe;
-          break;
-          case 3:
-          $three_stars[]=$cafe;
-          break;
-        }
-      }
+//         switch($cafe->Star_Rating){
+//           case -1:
+//             $black_stars[]=$cafe;
+//             break;
+//           case 0:
+//             $zero_stars[]=$cafe;
+//           break;
+//           case 1:
+//           $one_star[]=$cafe;
+//           break;
+//           case 2:
+//           $two_stars[]=$cafe;
+//           break;
+//           case 3:
+//           $three_stars[]=$cafe;
+//           break;
+//         }
+//       }
      
-      $this->sortByDistance($black_stars);
-      $this->sortByDistance($zero_stars);
-      $this->sortByDistance($one_star);
-      $this->sortByDistance($two_stars);
-      $this->sortByDistance($three_stars);
+//       $this->sortByDistance($black_stars);
+//       $this->sortByDistance($zero_stars);
+//       $this->sortByDistance($one_star);
+//       $this->sortByDistance($two_stars);
+//       $this->sortByDistance($three_stars);
       
-    $this->removeDupes($black_stars);
-    $this->removeDupes($zero_stars);
-    $this->removeDupes($one_star);
-    $this->removeDupes($two_stars);
-    $this->removeDupes($three_stars);
+//     $this->removeDupes($black_stars);
+//     $this->removeDupes($zero_stars);
+//     $this->removeDupes($one_star);
+//     $this->removeDupes($two_stars);
+//     $this->removeDupes($three_stars);
     
-      $stars["black stars"] = ($black_stars);
-      $stars["zero stars"] = ($zero_stars);
-      $stars["one star"] = ($one_star);
-      $stars["two stars"] = ($two_stars);
-      $stars["three stars"] = ($three_stars);
+//       $stars["black stars"] = ($black_stars);
+//       $stars["zero stars"] = ($zero_stars);
+//       $stars["one star"] = ($one_star);
+//       $stars["two stars"] = ($two_stars);
+//       $stars["three stars"] = ($three_stars);
       
-      $city_list[$city->Name] =$stars;
-    }
-    return $city_list;
+//       $city_list[$city->Name] =$stars;
+//     }
+//     return $city_list;
     
-  }
+//   }
 	function update_rating($cafe_id,$rating){
 		$cafe = $this->rise_cafe->GetCafe($cafe_id);
 		$this->rise_cafe->SetCafe($cafe->ID, $cafe->Name, $cafe->Latitude, $cafe->Longitude, $cafe->Address, $cafe->Google_Places_Reference, $cafe->Google_Places_Id, $rating, $cafe->RegionID, $cafe->Monday_Open, $cafe->Monday_Close, $cafe->Tuesday_Open, $cafe->Tuesday_Close, $cafe->Wednesday_Open, $cafe->Wednesday_Close, $cafe->Thursday_Open, $cafe->Thursday_Close, $cafe->Friday_Open, $cafe->Friday_Close, $cafe->Saturday_Open, $cafe->Saturday_Close, $cafe->Sunday_Open, $cafe->Sunday_Close, $cafe->ChainID);
