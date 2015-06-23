@@ -9,11 +9,7 @@
     	}
     	$numcafes = $city->One_Star+$city->Two_Stars+$city->Three_Stars+($reviewer?$city->Unconfirmed:0);
     	if($city->ID=14){
-	    	print_r_pre(array("One Star"=>$city->One_Star,
-	    								"Two Stars"=>$city->Two_Stars,
-	    								"Three Stars"=>$city->Three_Stars,
-	    								"Unconfirmed"=>$city->Unconfirmed
-	    								));
+	    	print_r_pre($city);
 	    	exit;
     	}
       if($numcafes){
