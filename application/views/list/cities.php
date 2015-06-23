@@ -70,7 +70,7 @@
 	    			cityBody.empty().append(data);
 	    			$('html, body').animate({
 				        scrollTop: targetEl.offset().top
-				    }, 2000);
+				    }, 500);
 	    		},
 	    		error: function(jqXHR, textStatus, errorThrown) {
           			alert("ERROR: City Star List Not Retrieved");
