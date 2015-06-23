@@ -29,8 +29,8 @@ if(!$hide){?>
 </style>
 <a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
 <li class="list-group-item" style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:5px solid #DDD">
-	<div class="text-center">
 	<span class="pull-right glyphicon glyphicon-map-marker"></span>
+	<div class="text-center">
       		<?=($cafe->Star_Rating==0?"<h4>".$cafe->Name."</h4>":"<h2>".$cafe->Name."</h2>")?>
     		<span style="color:<?=($reviewed==true?'#868A08':'#DDD')?>;">
     			<?php if(!$reviewed){?>
