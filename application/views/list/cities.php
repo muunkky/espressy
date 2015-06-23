@@ -42,7 +42,7 @@
 													break;
 											}
                 		}else{
-                			echo $numcafes-$city->Unconfirmed."/".$numcafes." Cafes";
+                			echo ($numcafes-$city->Unconfirmed)."/".$numcafes." Cafes";
                 		}
 									?>
                 </h2>
