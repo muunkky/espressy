@@ -30,7 +30,7 @@
                 <h1><?=strtoupper($city->Name)?>&nbsp;<small><small><span class="glyphicon glyphicon-collapse-down"></span></small></small></h1>
                 
                 <?php 
-	                if($city->Name="San Francisco"){
+	                if($city->Name=="San Francisco"){
 							    	print_r_pre(array("numcafes"=>$numcafes));
 							     	print_r_pre($city);
 							     	exit;
