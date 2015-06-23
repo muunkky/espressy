@@ -27,7 +27,7 @@ if(!$hide){?>
 	    text-decoration: none;
 	}
 </style>
-
+<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
 <li class="list-group-item" style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:5px solid #DDD">
 	<div class="text-center">
 
@@ -64,16 +64,13 @@ if(!$hide){?>
 					  }
     			} ?>
     		</span>
-    		<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
   	    	<h5>
-
   	    		
   	    		<?=$cafe->Hours?>
   	    		,&nbsp;
   	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away (open map)
-	  			
     	  	</h5>
-    	  	</a>
+    	  	
     	  	<h5>
 	    	  	<?php if(count($cafe->Sisters)>0){?>
   					<a class="btn btn-xs" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">+ Show <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes</a>
@@ -149,5 +146,5 @@ if(!$hide){?>
    		</div>  <!--End Row-->
     <?php } ?>
 </li>
-
+</a>
 <?php } ?>
