@@ -28,19 +28,23 @@
               <a class="btn btn-outline-inverse btn-lg city-expand" id="<?=$city->ID?>_cafes_collapse" data-toggle="collapse" data-target="#<?=$city->ID?>_cafes" style="margin-right:15px;color:white;border:none;background-color:transparent;">
                 <h1><?=strtoupper($city->Name)?>&nbsp;<small><small><span class="glyphicon glyphicon-collapse-down"></span></small></small></h1>
                 <h2>
-                	<?php 
-                		switch ($numcafes) {
-							case 0:
-								echo "No Cafes";
-								break;
-							case 1:
-								echo "1 Cafe";
-								break;
-							default:
-								echo $numcafes." Cafes";
-								break;
-						}
-					?>
+                	<?php
+                		if(!$reviewer){
+	                		switch ($numcafes) {
+												case 0:
+													echo "No Cafes";
+													break;
+												case 1:
+													echo "1 Cafe";
+													break;
+												default:
+													echo $numcafes." Cafes";
+													break;
+											}
+                		}else{
+                			echo $numcafes-$city->Unconfirmed."/".$numcafes." Cafes";
+                		}
+									?>
                 </h2>
               </a>
             </div>
