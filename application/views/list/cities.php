@@ -8,7 +8,7 @@
     		$unconfirmed = $city->Unconfirmed;
     	}
     	$numcafes = $city->One_Star+$city->Two_Stars+$city->Three_Stars+($reviewer?$city->Unconfirmed:0);
-    	if($city->ID=14){
+    	if($city->Name="San Francisco"){
 	    	print_r_pre($city);
 	    	exit;
     	}
