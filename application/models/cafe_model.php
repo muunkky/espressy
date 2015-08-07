@@ -138,7 +138,8 @@ public function list_cities_by_distance($lat1,$lon1){
 		$cafes = $this->rise_cafe->ListCafeByRegion(0, $cities[$i]->ID);
 
 		$stars = array(-2=>0,-1=>0,0=>0,1=>0,2=>0,3=>0);
-
+    print_r_pre($cafes);
+    exit;
 		foreach($cafes as $c){
 			$stars[$c->Star_Rating]=$stars[$c->Star_Rating]+1;
 		}
