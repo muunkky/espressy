@@ -81,7 +81,7 @@ class Welcome extends CI_Controller {
 		    $cities = $this->cafe_model->list_cities_alphabetically();
 		    $error_message = $this->location_unavailable();
 		}else{
-			$cities = $this->cafe_model->list_ttcities_by_distance($lat,$long);
+			$cities = $this->cafe_model->list_cities_by_distance($lat,$long);
 		}
 		$user = $this->get_user();
 		if($user){
