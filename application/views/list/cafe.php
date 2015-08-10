@@ -34,7 +34,7 @@ if(!$hide){?>
 	</a>
 	<div class="text-center">
       		<?=($cafe->Star_Rating==0?"<h4>".$cafe->Name."</h4>":"<h2>".$cafe->Name."</h2>")?>
-    		<span style="color:<?=($reviewed==true?'#868A08':'#DDD')?>;">
+    		<span style="color:<?=(($cafe->Star_Rating!=-2||$reviewed==true)?'#868A08':'#DDD')?>;">
     			<?php if(!$reviewed){?>
     				Not Rated
     			<?php }else{
