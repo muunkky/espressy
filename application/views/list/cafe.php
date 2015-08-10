@@ -2,9 +2,9 @@
 $hide = false;
 if(!$reviewer){
 	if($cafe->Star_Rating==-2){
-		$hide=true;
+		$hide=false;				//Set true to hide unrated cafes to non-reviewers
 	}elseif(!$reviewed){
-		$hide=true;
+		$hide=false;					//Set true to hide unrated cafes to non-reviewers
 	}
 }
 
@@ -36,7 +36,7 @@ if(!$hide){?>
       		<?=($cafe->Star_Rating==0?"<h4>".$cafe->Name."</h4>":"<h2>".$cafe->Name."</h2>")?>
     		<span style="color:<?=($reviewed==true?'#868A08':'#DDD')?>;">
     			<?php if(!$reviewed){?>
-    				?
+    				Not Rated
     			<?php }else{
 	  				switch ($cafe->Star_Rating) {
 						  case 3: ?>
@@ -58,7 +58,7 @@ if(!$hide){?>
 							  <span class="glyphicon glyphicon-star-empty"></span>
 							  <?php break;
 						case -2: ?>
-							  ?
+							  Not Rated
 							  <?php break;
 						  default:
 							  
@@ -131,7 +131,7 @@ if(!$hide){?>
 													  <span class="glyphicon glyphicon-star-empty"></span>
 													  <?php break;
 												case -2: ?>
-													  ?
+													  Unrated
 													  <?php break;
 												  default:
 													  
