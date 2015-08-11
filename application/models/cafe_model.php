@@ -516,10 +516,10 @@ EOD;
     $this->rise_cafe->SetChain($chainID,$name);
     return $chainID;
   }
-  function new_region($name){
-    $regionID = $this->rise_cafe->NewRegion(); // Don't know if this function exists. Chec rise interface
-    $this->rise_cafe->SetRegion($regionID,$name);
-    return $chainID;
+  function new_region($name,$lat,$long){
+    $regionID = $this->rise_cafe->NewRegion(); 
+    $this->rise_cafe->SetRegion($regionID,$name,$lat,$long);
+    return $regionID;
   }
   function sortByDistance( &$array )
   {
