@@ -1,5 +1,9 @@
 <html>
-<?php $this->load->view('template'); ?>
+<?php 
+	$this->load->view('template'); 
+	$this->load->view('analyticstracking'); 
+?>
+
 <body onload="initialize()" class="verydark">
 <div class="container">
 	<div class="sixteen columns medium">
