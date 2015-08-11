@@ -32,12 +32,25 @@
 			</script> 
 		</label>
 		<label for="cafe_region">Region
-		<select id="cafe_region" class="form-control" required>
+		<select id="cafe_region" class="form-control" onchange='NewRegion(this.value);' required>
 				<option data-lat="NULL" data-lon="NULL" value="NULL">Select Region</option>
+				<option value="NEW">New Region</option>
+				<option disabled>──────────</option>
 			<?php foreach ($regions as $r) {?>
 				<option data-lat="<?=$r->Center_Latitude?>" data-lon="<?=$r->Center_Longitude?>" value="<?=$r->ID;?>"><?=$r->Name;?></option>
 			<?php } ?>
 		</select>
+		<input type="text" id="cafe_region_new" name="cafe_region_new" style="display:none;" placeholder="New Region Name" />
+		<script type="text/javascript">
+			function NewRegion(val){
+			 var element=document.getElementById('cafe_region_new');
+			 if(val=='NEW')
+			   element.style.display='block';
+			 else  
+			   element.style.display='none';
+			}
+			
+			</script> 
 		</label>
 		<label for="cafe_address">Address
 			<input type="text" class="form-control" id="cafe_address" required>
@@ -344,6 +357,7 @@ $( document ).on("submit", "#submit_form",function(e){
     	var cafe_chain = $("#cafe_chain").val();
     	var cafe_chain_new = $("#cafe_chain_new").val();
     	var cafe_region = $("#cafe_region").val();
+    	var cafe_region_new = $("#cafe_region_new").val();
     	var cafe_address = $("#cafe_address").val();
     	var cafe_latitude = $("#cafe_latitude").val();
     	var cafe_longitude = $("#cafe_longitude").val();
@@ -376,6 +390,7 @@ $( document ).on("submit", "#submit_form",function(e){
     			cafe_chain: cafe_chain,
     			cafe_chain_new: cafe_chain_new,
     			cafe_region: cafe_region,
+    			cafe_region_new: cafe_region_new,
     			cafe_address: cafe_address,
     			cafe_latitude: cafe_latitude,
     			cafe_longitude: cafe_longitude,

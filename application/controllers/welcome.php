@@ -228,6 +228,7 @@ public function get_city_stars(){
     
 	$name = $this->input->post("cafe_name");
 	$region = $this->input->post("cafe_region");
+	$new_region = $this->input->post("cafe_region_new");
 	$address = $this->input->post("cafe_address");
 	$latitude = $this->input->post("cafe_latitude");
 	$longitude = $this->input->post("cafe_longitude");
@@ -273,6 +274,9 @@ public function get_city_stars(){
   
   if($chain=="NEW"||$chain=="New Chain"){
   	$chain = $this->cafe_model->new_chain($new_chain);
+  }
+  if($region=="NEW"||$region=="New Chain"){
+  	$region = $this->cafe_model->new_region($new_region);
   }
   $res = $this->cafe_model->submit($email,$name,$region,$address,$latitude,$longitude,$rating,$cafe_rating_comments,$hours,$chain);
             print_r($res);
