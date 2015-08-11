@@ -11,5 +11,5 @@
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/css/simplex/bootstrap.min.css">
   <link rel="stylesheet" href="/css/main.css">
-
+	<?php $this->load->view('analyticstracking'); ?>
 </head>
