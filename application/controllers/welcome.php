@@ -277,6 +277,7 @@ public function get_city_stars(){
   }
   if($region=="NEW"||$region=="New Region"){
   	$region = $this->cafe_model->new_region($new_region,$latitude,$longitude);
+  	mail("cameronrout@gmail.com","New Region", $user["name"]." has added a new region called: ".$new_region); 
   }
   $res = $this->cafe_model->submit($email,$name,$region,$address,$latitude,$longitude,$rating,$cafe_rating_comments,$hours,$chain);
             print_r($res);
