@@ -1,0 +1,92 @@
+<li class="list-group-item">
+            <div class="row">
+              <div class="col-xs-10">
+              	<h2><?=$cafe->Name?></h2>
+              	<p>
+              		<?if(count($cafe->Sisters)>0){?>
+              			<a class="btn" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="padding:3px;color:black;margin-right:15px;border:1px solid black;border-radius:5px;background-color:transparent;">+<?=(count($cafe->Sisters))?> Cafes</a>
+              		<?php } ?>
+              		<?=$cafe->Hours?>
+              	</p>
+              </div>
+              <div class="col-xs-2 text-center">
+                
+	            <div class="row">
+	            	<div class="col-xs-12">
+		            	<h3>
+			            	<a target="_blank" href="http://maps.google.com/?q=<?=$cafe->Name;?>%20near%20<?=$cafe->Latitude;?>,<?=$cafe->Longitude;?>" style="padding:3px;color:black;margin-right:15px;border:1px solid black;border-radius:5px;background-color:transparent;" class="btn">
+			            		<span class="glyphicon glyphicon-globe"></span> <?=round($cafe->Distance,1)?> km
+		                	</a>
+	                	</h3>
+                	</div>
+                </div>
+                
+              	<div class="row">
+              		
+            	</div>
+              
+              </div>
+            </div>
+            
+           <div class="row">
+             <?php if(count($cafe->Sisters)>0){?>
+            <ul class="list-group sisters-collapse collapse" id="<?=$cafe->ID?>_sisters">
+            	<h2>Other Locations</h2>
+              <?php
+  foreach($cafe->Sisters as $s){
+    if($s->ID != $cafe->ID){?>
+            <li class="list-group-item">
+            	<div class="row">
+            		<div class="col-xs-8 text-left">
+              			<h4>
+              				<?php
+              					switch ($s->Star_Rating) {
+									  case 3: ?>
+										  <span class="glyphicon glyphicon-star"></span>
+										  <span class="glyphicon glyphicon-star"></span>
+										  <span class="glyphicon glyphicon-star"></span>
+										  <?php break;
+									  case 2: ?>
+										  <span class="glyphicon glyphicon-star"></span>
+										  <span class="glyphicon glyphicon-star"></span>
+										  <?php break; 
+									  case 1: ?>
+										  <span class="glyphicon glyphicon-star"></span>
+										  <?php break;
+									  case 0: ?>
+										  <span class="label label-default">HM</span>
+										  <?php break;
+									  case -1: ?>
+										  <span class="glyphicon glyphicon-star-empty"></span>
+										  <?php break;
+									  default:
+										  
+										  break;
+								  }
+              				?>
+              			<?=$s->Address;?>
+              			</h4>
+              			<p><?=$s->Hours;?></p>
+	              	</div>
+	              	<div class="col-xs-4 text-right">
+		                <h3>
+			            	<a target="_blank" href="http://maps.google.com/?q=<?=$s->Name;?> near <?=$s->Latitude;?>,<?=$s->Longitude;?>" style="padding:3px;color:black;margin-right:15px;border:1px solid black;border-radius:5px;background-color:transparent;" class="btn">
+			            		<span class="glyphicon glyphicon-globe"></span> <?=round($s->Distance,1)?> km
+		                	</a>
+	                	</h3>
+		            </div>
+		        </div>
+            </li>
+    <?php }}?>
+            </ul>
+              </div>
+            <?php }
+            if($reviewer){
+              
+        if(!empty($cafe->Reviews)){
+          $this->load->view("list/cafe_review",array("reviews"=>$cafe->Reviews));
+        }
+        
+              $this->load->view("list/review",array("cafe_id"=>$cafe->ID,"stars"=>3));
+            }?>
+            </li>

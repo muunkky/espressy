@@ -1,0 +1,21 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Admin extends CI_Controller {
+    
+    public function __construct()
+    {
+        parent::__construct();
+		
+	}
+	public function index(){
+		$this->load->view('admin/add_reviewer');
+	}
+	public function add_reviewer(){
+		
+		$email = $this->input->post('reviewer_email');
+		$this->load->model("user_model");
+		$pin = $this->user_model->add_reviewer($email);
+		$this->load->view('admin/add_reviewer',array('email'=>$email,'pin'=>$pin));
+	}
+
+}
