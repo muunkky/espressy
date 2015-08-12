@@ -1,1 +1,0 @@
-<div class="alert alert-danger"><h1>Locations Services Unavailable</h1><p>Please enable location services to find a cafe near you.</p></div>
