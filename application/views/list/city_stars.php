@@ -1,4 +1,4 @@
-    <ul class="list-group" style="margin:0;">
+    <ul class="list-group list-inline" style="margin:0;">
       <?php 
       	$HM=0;
 		$reviewed=false;
