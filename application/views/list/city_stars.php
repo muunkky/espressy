@@ -1,4 +1,4 @@
-    <div class="list-group row" style="margin:0;" id="citycafelist">
+    <ul class="list-group list-inline" style="margin:0;">
       <?php 
       	$HM=0;
 		$reviewed=false;
@@ -31,4 +31,4 @@
 	
 		<?php }
       ?>
-    </div>
+    </ul>
