@@ -28,7 +28,7 @@ if(!$hide){?>
 	}
 </style>
 
-<li class="list-group-item col-xs-12 col-md-6 col-lg-3"
+<div class="list-group-item col-xs-12 col-md-6 col-lg-3"
 	style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:5px solid #DDD">
 	<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
 	<span class="pull-right glyphicon glyphicon-map-marker"></span>
@@ -148,5 +148,5 @@ if(!$hide){?>
     		</ul>
    		</div>  <!--End Row-->
     <?php } ?>
-</li>
+</div>
 <?php } ?>
