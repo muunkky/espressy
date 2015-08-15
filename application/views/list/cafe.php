@@ -67,9 +67,9 @@ if(!$hide){?>
     			} ?>
     		</span>
   	    	<h5>
-  	    		
   	    		<?=$cafe->Hours?>
-  	    		,&nbsp;
+  	    	</h5>
+  	    	<h5>
   	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away
     	  	</h5>
     	  	
