@@ -28,7 +28,9 @@ if(!$hide){?>
 	}
 </style>
 
-<li class="list-group-item" style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:5px solid #DDD">
+<li class="list-group-item"
+	style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:5px solid #DDD"
+	class= "col-xs-12 col-md-6 col-lg-3">
 	<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
 	<span class="pull-right glyphicon glyphicon-map-marker"></span>
 	</a>
