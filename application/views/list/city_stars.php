@@ -1,4 +1,4 @@
-    <div class="list-group row" style="margin:0;">
+    <div class="row" style="margin:0;">
       <?php 
       	$HM=0;
 		$reviewed=false;
