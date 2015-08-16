@@ -1,5 +1,4 @@
 <li id="<?=$r->ID?>_review" class="list-group-item">
-	<div class="row">
 		<div class="col-xs-12">
 			<span id="<?=$r->ID?>_close" class="glyphicon glyphicon-remove-circle pull-right"></span>
 			<?php if($r->Rating > 0){
@@ -17,7 +16,6 @@
 		&nbsp;
 		<?=date('M-y',strtotime($r->Date))?>
 		</div>
-	</div>
 	<p><?=$r->Comments?></p>
 	<script>
 		$( document ).ready(function(){
