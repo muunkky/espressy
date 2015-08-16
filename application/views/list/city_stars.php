@@ -24,7 +24,7 @@
 	.sistercard{
 		background-color:#EEE;
 	}
-	@media (min-width: $screen-xs){
+	@media (max-width: $screen-xs-max){
 		.reviewercard{
 			min-height:250px;
 		}
@@ -32,7 +32,7 @@
 			min-height:180px;
 		}
 	}	
-	@media (min-width: $screen-sm) {
+	@media (min-width: $screen-sm-min) {
 	    .reviewercard{
 			height:250px;
 			overflow-y:auto;
