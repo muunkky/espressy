@@ -14,9 +14,10 @@
 	a:active {
 	    text-decoration: none;
 	}
-
+	.cafecard, .reviewercard{
+		border:1px solid #DDD;		
+	}
 	.cafecard {
-		border:1px solid #DDD;
 		min-height:180px;
 	}
 	.hmcard{
@@ -25,6 +26,9 @@
 	}
 	.sistercard{
 		background-color:#EEE;
+	}
+	.reviewercard{
+		min-height:250px;
 	}
 </style>
 
