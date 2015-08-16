@@ -38,6 +38,7 @@ if(!$hide){?>
       			<?php if(count($cafe->Sisters)>0){?>
 				  	<a class="btn btn-xs pull-right" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">
 						<span data-toggle="tool-tip" title="Show <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes">+ <?=(count($cafe->Sisters))?></span>
+						banana
 					</a>
 				<?php } ?>
     		<span style="color:<?=(($cafe->Star_Rating==-2||$reviewed==false)?'#DDD':'#868A08')?>;">
