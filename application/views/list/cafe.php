@@ -31,15 +31,15 @@ if(!$hide){?>
 <div class="col-md-6 col-lg-3"
 	style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:5px solid #DDD">
 	<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
-	<span class="pull-right glyphicon glyphicon-map-marker"></span>
-	<?php if(count($cafe->Sisters)>0){?>
-	  	<a class="btn btn-xs pull-right" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">
-			<span data-toggle="tool-tip" title="Show <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes">+ <?=(count($cafe->Sisters))?></span>
-		</a>
-	<?php } ?>
+		<span class="pull-right glyphicon glyphicon-map-marker"></span>
 	</a>
 	<div class="text-center">
       		<?=($cafe->Star_Rating==0?"<h4>".$cafe->Name."</h4>":"<h2>".$cafe->Name."</h2>")?>
+      			<?php if(count($cafe->Sisters)>0){?>
+				  	<a class="btn btn-xs pull-right" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">
+						<span data-toggle="tool-tip" title="Show <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes">+ <?=(count($cafe->Sisters))?></span>
+					</a>
+				<?php } ?>
     		<span style="color:<?=(($cafe->Star_Rating==-2||$reviewed==false)?'#DDD':'#868A08')?>;">
     			<?php if(!$reviewed){?>
     				Not Rated
