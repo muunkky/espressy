@@ -29,7 +29,7 @@ if(!$hide){?>
 </style>
 
 <div class="col-md-6 col-lg-3"
-	style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:1px solid #DDD">
+	style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:1px solid #DDD;min-height:180px;">
 	<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
 		<span class="pull-right glyphicon glyphicon-map-marker" style="margin-top:10px"></span>
 	</a>
