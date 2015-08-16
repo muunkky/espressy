@@ -18,7 +18,7 @@
 		border:1px solid #DDD;		
 	}
 	.cafecard {
-		min-height:180px;
+		height:180px;
 	}
 	.hmcard{
 		padding-top: 0;
@@ -28,7 +28,8 @@
 		background-color:#EEE;
 	}
 	.reviewercard{
-		min-height:250px;
+		height:250px;
+		overflow-y:auto;
 	}
 </style>
 
