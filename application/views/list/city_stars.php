@@ -23,6 +23,9 @@
 		padding-top: 0;
 		padding-bottom: 0;
 	}
+	.sistercard{
+		background-color:#EEE;
+	}
 </style>
 
     <div class="row" style="margin:0;">
