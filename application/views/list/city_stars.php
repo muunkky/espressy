@@ -32,7 +32,7 @@
 			min-height:180px;
 		}
 	}	
-	@media (min-width: $screen-sm) and (max-width: $screen-md) and (max-width: $screen-lg){
+	@media (min-width: $screen-sm) {
 	    .reviewercard{
 			height:250px;
 			overflow-y:auto;
