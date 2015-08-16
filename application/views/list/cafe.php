@@ -75,7 +75,7 @@ if(!$hide){?>
     
    
      <?php if(count($cafe->Sisters)>0){?>
-     	<div class="row sisters-collapse collapse" id="<?=$cafe->ID?>_sisters" style="padding:0;margin:0;">
+     	<div class="sisters-collapse collapse" id="<?=$cafe->ID?>_sisters" style="padding:0;margin:0;">
     		
   			<?php
 			foreach($cafe->Sisters as $s){
