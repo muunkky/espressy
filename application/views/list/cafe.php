@@ -79,7 +79,7 @@ if(!$hide){?>
   			<?php
 			foreach($cafe->Sisters as $s){
 				if($s->ID != $cafe->ID){?>
-					<div class="col-sm-6 col-md-3 cafecard sistercard <?=($s->Star_Rating==0?"hmcard":"")?>">
+					<div class="col-sm-6 col-md-3 <?=($reviewer?"reviewercard":"cafecard")?> sistercard <?=($s->Star_Rating==0?"hmcard":"")?>">
 						<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$s->Address;?>">
 							<span class="pull-right glyphicon glyphicon-map-marker" style="margin-top:10px"></span>
 						</a>
