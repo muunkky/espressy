@@ -17,9 +17,6 @@
 	.cafecard, .reviewercard{
 		border:1px solid #DDD;		
 	}
-	.cafecard {
-		height:180px;
-	}
 	.hmcard{
 		padding-top: 0;
 		padding-bottom: 0;
@@ -27,10 +24,24 @@
 	.sistercard{
 		background-color:#EEE;
 	}
-	.reviewercard{
-		height:250px;
-		overflow-y:auto;
-	}
+	@media (min-width: $screen-xs){
+		.reviewercard{
+			min-height:250px;
+		}
+		.cafecard {
+			min-height:180px;
+		}
+	}	
+	@media (min-width: $screen-sm) and (max-width: $screen-md) and (max-width: $screen-lg){
+	    .reviewercard{
+			height:250px;
+			overflow-y:auto;
+		}
+		.cafecard {
+			height:180px;
+			overflow-y:auto;
+		}
+	}  
 </style>
 
     <div class="row" style="margin:0;">
