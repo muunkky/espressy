@@ -33,8 +33,8 @@ if(!$hide){?>
 	<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
 	<span class="pull-right glyphicon glyphicon-map-marker"></span>
 	<?php if(count($cafe->Sisters)>0){?>
-	  	<a class="btn btn-xs" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">
-			<span class="pull-right" data-toggle="tool-tip" title="Show <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes">+ <?=(count($cafe->Sisters))?></span>
+	  	<a class="btn btn-xs pull-right" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">
+			<span data-toggle="tool-tip" title="Show <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes">+ <?=(count($cafe->Sisters))?></span>
 		</a>
 	<?php } ?>
 	</a>
