@@ -1,3 +1,30 @@
+<style>
+	a:link {
+	text-decoration: none;
+	}
+	
+	a:visited {
+	    text-decoration: none;
+	}
+	
+	a:hover {
+	    text-decoration: none;
+	}
+	
+	a:active {
+	    text-decoration: none;
+	}
+
+	.cafecard {
+		border:1px solid #DDD;
+		min-height:180px;
+	}
+	.hmcard{
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+</style>
+
     <div class="row" style="margin:0;">
       <?php 
       	$HM=0;

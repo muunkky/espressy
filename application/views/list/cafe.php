@@ -10,26 +10,8 @@ if(!$reviewer){
 
 if(!$hide){?>
 
-<style>
-	a:link {
-    text-decoration: none;
-	}
-	
-	a:visited {
-	    text-decoration: none;
-	}
-	
-	a:hover {
-	    text-decoration: none;
-	}
-	
-	a:active {
-	    text-decoration: none;
-	}
-</style>
 
-<div class="col-md-6 col-lg-3"
-	style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:1px solid #DDD;min-height:180px;">
+<div class="col-md-6 col-lg-3 cafecard <?=($cafe->Star_Rating==0?"hmcard":"")?>">
 	<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
 		<span class="pull-right glyphicon glyphicon-map-marker" style="margin-top:10px"></span>
 	</a>
