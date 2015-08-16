@@ -1,21 +1,21 @@
 <li id="<?=$r->ID?>_review" class="list-group-item">
-		<div class="col-xs-12">
-			<span id="<?=$r->ID?>_close" class="glyphicon glyphicon-remove-circle pull-right"></span>
-			<?php if($r->Rating > 0){
-				for ($i=$r->Rating;$i>0;$i--){?>
-					<span class="glyphicon glyphicon-star"></span>
-				<?php }
-			}elseif($r->Rating==0){
-				echo "HM";
-			}elseif($r->Rating==-1){?>
-				<span class="glyphicon glyphicon-star-empty"></span>
-			<?php }
-			
-			?>
-		<?=$r->User_Name?>
-		&nbsp;
-		<?=date('M-y',strtotime($r->Date))?>
-		</div>
+		
+	<span id="<?=$r->ID?>_close" class="glyphicon glyphicon-remove-circle pull-right"></span>
+	<?php if($r->Rating > 0){
+		for ($i=$r->Rating;$i>0;$i--){?>
+			<span class="glyphicon glyphicon-star"></span>
+		<?php }
+	}elseif($r->Rating==0){
+		echo "HM";
+	}elseif($r->Rating==-1){?>
+		<span class="glyphicon glyphicon-star-empty"></span>
+	<?php }
+	
+	?>
+	<?=$r->User_Name?>
+	&nbsp;
+	<?=date('M-y',strtotime($r->Date))?>
+	
 	<p><?=$r->Comments?></p>
 	<script>
 		$( document ).ready(function(){
