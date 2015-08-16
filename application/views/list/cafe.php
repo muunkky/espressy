@@ -32,6 +32,11 @@ if(!$hide){?>
 	style="<?=($cafe->Star_Rating==0?"padding-top: 0;padding-bottom: 0;":"")?>border:5px solid #DDD">
 	<a target="_blank" style="color:black;" href="http://maps.google.com/?q=<?=$cafe->Name;?>,%20<?=$cafe->Address;?>">
 	<span class="pull-right glyphicon glyphicon-map-marker"></span>
+	<?php if(count($cafe->Sisters)>0){?>
+	  	<a class="btn btn-xs" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">
+			<span class="pull-right" data-toggle="tool-tip" title="Show <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes">+ <?=(count($cafe->Sisters))?></span>
+		</a>
+	<?php } ?>
 	</a>
 	<div class="text-center">
       		<?=($cafe->Star_Rating==0?"<h4>".$cafe->Name."</h4>":"<h2>".$cafe->Name."</h2>")?>
@@ -72,12 +77,6 @@ if(!$hide){?>
   	    	</h5>
   	    	<h5>
   	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away
-	    	  	<?php if(count($cafe->Sisters)>0){?>
-  					<a class="btn btn-xs" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">
-						<span class="pull-right" data-toggle="tool-tip" title="Show <?=(count($cafe->Sisters))?> other <?=$cafe->Name?> cafes">+ <?=(count($cafe->Sisters))?></span>
-					</a>
-
-  				<?php } ?>
     	  	</h5>
     	  	
     	  	<?php
