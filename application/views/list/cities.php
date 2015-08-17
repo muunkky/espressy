@@ -52,8 +52,9 @@
               
             </div>
           </div>
-      </div>
       <span class="pull-right glyphicon glyphicon-triangle-bottom"></span>
+      </div>
+      
     </li>
     </a>
     <ul class="list-group collapse city-collapse" id="<?=$city->ID?>_cafes">
