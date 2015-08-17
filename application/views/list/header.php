@@ -8,7 +8,7 @@
   <title>ESPRESSY</title>
   <meta content="" name="keywords" />
   <meta content="" name="description" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/css/simplex/bootstrap.min.css">
   <link rel="stylesheet" href="/css/main.css">
 	<?php $this->load->view('analyticstracking'); ?>
