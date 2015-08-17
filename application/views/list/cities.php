@@ -12,7 +12,7 @@
       if($numcafes){
       ?>
   <ul class="list-group city">
-  	<a class="city-expand" id="<?=$city->ID?>_cafes_collapse" data-toggle="collapse" data-target="#<?=$city->ID?>_cafes" style="border:none;background-color:transparent;">
+  	<a class="city-expand" id="<?=$city->ID?>_cafes_collapse" data-toggle="collapse" data-target="#<?=$city->ID?>_cafes" style="color:white;border:none;background-color:transparent;">
               
     <li class="list-group-item city">
         <div class="container" style="margin:0;">
@@ -53,7 +53,7 @@
             </div>
           </div>
       </div>
-      <span class="pull-right glyphicon glyphicon-menu-down"></span>
+      <span class="pull-right glyphicon glyphicon-collapse-down"></span>
     </li>
     </a>
     <ul class="list-group collapse city-collapse" id="<?=$city->ID?>_cafes">
