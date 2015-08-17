@@ -27,7 +27,7 @@
             <div class="clearfix visible-xs"></div>
             <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-pull-4 text-center">
               <a class="btn btn-outline-inverse btn-lg city-expand" id="<?=$city->ID?>_cafes_collapse" data-toggle="collapse" data-target="#<?=$city->ID?>_cafes" style="margin-right:15px;color:white;border:none;background-color:transparent;">
-                
+                <h1><?=strtoupper($city->Name)?></h1>
                 <h2>
                 	<?php
                 		if(!$reviewer){
@@ -47,7 +47,7 @@
                 		}
 									?>
                 </h2>
-                <h1><?=strtoupper($city->Name)?>&nbsp;<small><small><span class="glyphicon glyphicon-collapse-down"></span></small></small></h1>
+                <h1><small><small><span class="glyphicon glyphicon-collapse-down"></span></small></small></h1>
               </a>
             </div>
           </div>
