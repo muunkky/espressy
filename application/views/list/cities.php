@@ -47,7 +47,7 @@
                 		}
 									?>
                 </h2>
-                <h1><small><small><span class="glyphicon glyphicon-collapse-down"></span></small></small></h1>
+                <span class="pull-right glyphicon glyphicon-collapse-down"></span>
               </a>
             </div>
           </div>
