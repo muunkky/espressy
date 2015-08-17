@@ -52,8 +52,8 @@
               
             </div>
           </div>
+                <span class="pull-right glyphicon glyphicon-menu-down"></span>
       </div>
-      <span class="pull-right glyphicon glyphicon-collapse-down"></span>
     </li>
     </a>
     <ul class="list-group collapse city-collapse" id="<?=$city->ID?>_cafes">
