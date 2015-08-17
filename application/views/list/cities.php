@@ -12,7 +12,7 @@
       if($numcafes){
       ?>
   <ul class="list-group city">
-  	<a class="btn btn-outline-inverse btn-lg city-expand" id="<?=$city->ID?>_cafes_collapse" data-toggle="collapse" data-target="#<?=$city->ID?>_cafes" style="margin-right:15px;color:white;border:none;background-color:transparent;">
+  	<a class="city-expand" id="<?=$city->ID?>_cafes_collapse" data-toggle="collapse" data-target="#<?=$city->ID?>_cafes" style="border:none;background-color:transparent;">
               
     <li class="list-group-item city">
         <div class="container" style="margin:0;">
