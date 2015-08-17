@@ -51,8 +51,9 @@
                 
               
             </div>
+          <span class="pull-right glyphicon glyphicon-triangle-bottom" style="margin-right:30px;"></span>
           </div>
-      <span class="pull-right glyphicon glyphicon-triangle-bottom"></span>
+      
       </div>
       
     </li>
