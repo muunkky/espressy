@@ -52,7 +52,7 @@
               
             </div>
           </div>
-                <span class="pull-right glyphicon glyphicon-menu-down"></span>
+                <span class="pull-right glyphicon glyphicon-menu-down" style="color:white;"></span>
       </div>
     </li>
     </a>
