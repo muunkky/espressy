@@ -12,6 +12,8 @@
       if($numcafes){
       ?>
   <ul class="list-group city">
+  	<a class="btn btn-outline-inverse btn-lg city-expand" id="<?=$city->ID?>_cafes_collapse" data-toggle="collapse" data-target="#<?=$city->ID?>_cafes" style="margin-right:15px;color:white;border:none;background-color:transparent;">
+              
     <li class="list-group-item city">
         <div class="container" style="margin:0;">
           <div class="row">
@@ -26,7 +28,6 @@
             </div>
             <div class="clearfix visible-xs"></div>
             <div class="col-xs-12 col-xs-offset-0 col-sm-4 col-sm-pull-4 text-center">
-              <a class="btn btn-outline-inverse btn-lg city-expand" id="<?=$city->ID?>_cafes_collapse" data-toggle="collapse" data-target="#<?=$city->ID?>_cafes" style="margin-right:15px;color:white;border:none;background-color:transparent;">
                 <h1><?=strtoupper($city->Name)?></h1>
                 <h2>
                 	<?php
@@ -47,12 +48,14 @@
                 		}
 									?>
                 </h2>
-                <span class="pull-right glyphicon glyphicon-collapse-down"></span>
-              </a>
+                
+              
             </div>
           </div>
       </div>
+      <span class="pull-right glyphicon glyphicon-collapse-down"></span>
     </li>
+    </a>
     <ul class="list-group collapse city-collapse" id="<?=$city->ID?>_cafes">
 		
   	</ul>
