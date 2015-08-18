@@ -77,12 +77,15 @@ class Welcome extends CI_Controller {
 		
 		$this->session->set_userdata(array('reviewer'=>TRUE,'latitude'=>$lat,"longitude"=>$long,"date"=>$date));
 	    $this->load->model('cafe_model');
-		if(!$lat||!$long){
-		    $cities = $this->cafe_model->list_cities_alphabetically();
-		    $error_message = $this->location_unavailable();
-		}else{
-			$cities = $this->cafe_model->list_cities_by_distance($lat,$long);
-		}
+	    
+	    $cities = $this->cafe_model->list_cities_by_distance($lat,$long);
+	    
+		// if(!$lat||!$long){
+		//     $cities = $this->cafe_model->list_cities_alphabetically();
+		//     $error_message = $this->location_unavailable();
+		// }else{
+		// 	$cities = $this->cafe_model->list_cities_by_distance($lat,$long);
+		// }
 		$user = $this->get_user();
 		if($user){
 			$reviewer = $user['reviewer'];
