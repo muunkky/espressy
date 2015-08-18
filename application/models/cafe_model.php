@@ -154,7 +154,7 @@ public function list_cities_by_distance($lat1,$lon1){
   		$city_dist[$key]->Two_Stars = $stars[2];
   		$city_dist[$key]->Three_Stars = $stars[3];
   	}
-  	print_r_pre($city_dist);
+  	
     ksort($city_dist);
 	  return $city_dist;
 }
