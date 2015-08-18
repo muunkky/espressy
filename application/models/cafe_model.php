@@ -334,7 +334,11 @@ public function list_cities_by_distance($lat1,$lon1){
 						$sister= (object) array_merge( (array)$sister, array( 'Hours' => '' ) );
               			$sister->Hours = $this->getHours($sister,$date);
               			$sister = (object) array_merge( (array)$sister, array( 'Distance' => '0' ) );
-						$sister->Distance = $this->get_distance($lat, $lon, $sister->Latitude, $sister->Longitude);
+						if($lat!=0&&$lon!=0){
+      	    	$sister->Distance = 0;
+      			}else{
+      			  $sister->Distance = $this->get_distance($lat, $lon, $sister->Latitude, $sister->Longitude);
+      			}
 						$cafe->Sisters[] = $sister;
 					}
 				}

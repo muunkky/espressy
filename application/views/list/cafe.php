@@ -130,10 +130,10 @@ if(!$hide){?>
 					  	    	<h5>
 					  	    		<?php
 					  	    			if($s->Distance == 0){?>
-					  	    			Unknown Distance
-					  	    		<?php }	else{
-					  	    		echo min(round($s->Distance,1),100);
-					  	    		echo (($s->Distance>100)?"+":"")." km away";
+						  	    			Unknown Distance
+						  	    		<?php }	else{
+						  	    		echo min(round($s->Distance,1),100);
+						  	    		echo (($s->Distance>100)?"+":"")." km away";
 					  	    		}?>
 					    	  	</h5>
 					    	  	
