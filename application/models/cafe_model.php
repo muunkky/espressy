@@ -126,8 +126,7 @@ public function list_cities_by_distance($lat1,$lon1){
 	        $lon2 = $cities[$i]->Center_Longitude;
 	        $distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
 	    }else{
-	        $distance = strcmp($cities[$i]->Name,'a');
-	        print_r_pre(array($cities[$i]->Name=>$distance));
+	        $distance = strcmp('a',$cities[$i]->Name);
 	        $i++;
 	    }
     $city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Unconfirmed'=>array()));
@@ -292,7 +291,7 @@ public function list_cities_by_distance($lat1,$lon1){
 		$city_cafes = array();
 
 	  if($lat==0&&$lon==0){
-	    $res = $this->db->query("SELECT t_es_dev_u_Cafe.c_id as ID t_es_dev_u_Cafe.NAME as Distance FROM t_es_dev_u_Cafe WHERE t_es_dev_u_Cafe.c_r_Region = $RegionID
+	    $res = $this->db->query("SELECT t_es_dev_u_Cafe.c_id as ID t_es_dev_u_Cafe.NAME as Name FROM t_es_dev_u_Cafe WHERE t_es_dev_u_Cafe.c_r_Region = $RegionID
   		ORDER BY Distance");
 	  }else{
     	$res = $this->db->query("SELECT t_es_dev_u_Cafe.c_id as ID, ( 6371 *2 * ATAN2( SQRT( SIN( (
@@ -314,7 +313,11 @@ public function list_cities_by_distance($lat1,$lon1){
 		foreach($res->result() as $c){
 			$cafe = $this->rise_cafe->GetCafe($c->ID);
 			$cafe = (object) array_merge( (array)$cafe, array( 'Distance' => '0' ) );
-			$cafe->Distance =floatval($c->Distance);
+			if($lat==0&&$lon==0){
+  			$cafe->Distance =strcmp('a',$c->Name);
+	  	}else{
+	  	  $cafe->Distance = $c->Distance;
+	  	}
 			$cafe= (object) array_merge( (array)$cafe, array( 'Hours' => '' ) );
 			$cafe->Hours = $this->getHours($cafe, $date);
 			$cafe = (object) array_merge( (array)$cafe, array( 'Reviews' => array() ) );
