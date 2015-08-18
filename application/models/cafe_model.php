@@ -119,25 +119,25 @@ public function list_cities_by_distance($lat1,$lon1){
 	$city_list = array();
   $city_dist = array();
 	$cities = $this->rise_cafe->ListRegion(0);
+	
   	for($i=0;$i<count($cities);$i++){
+      $key = $cities[$i]->Name;
+      if($lat1==0&&$lon1==0){
+    	  $lat2 = $cities[$i]->Center_Latitude;
+  	    $lon2 = $cities[$i]->Center_Longitude;
+  	    $distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
+  	    $key = $distance;
+      }
+      $city_dist[$key] = (object) array_merge((array)$cities[$i], array('Unconfirmed'=>array()));
+      $city_dist[$key] = (object) array_merge((array)$cities[$i], array('Black_Stars'=>array()));
+  		$city_dist[$key] = (object) array_merge((array)$cities[$i], array('Zero_Stars'=>array()));
+  		$city_dist[$key] = (object) array_merge((array)$cities[$i], array('One_Star'=>array()));
+  		$city_dist[$key] = (object) array_merge((array)$cities[$i], array('Two_Stars'=>array()));
+  		$city_dist[$key] = (object) array_merge((array)$cities[$i], array('Three_Stars'=>array()));
+  
+  		$cafes = $this->rise_cafe->ListCafeByRegion(0, $cities[$i]->ID);
 
-  		if($lat1*$lon1!=0){
-	        $lat2 = $cities[$i]->Center_Latitude;
-	        $lon2 = $cities[$i]->Center_Longitude;
-	        $distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
-	    }else{
-	        $distance = strcmp('a',$cities[$i]->Name);
-	    }
-    $city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Unconfirmed'=>array()));
-    $city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Black_Stars'=>array()));
-		$city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Zero_Stars'=>array()));
-		$city_dist[$distance] = (object) array_merge((array)$cities[$i], array('One_Star'=>array()));
-		$city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Two_Stars'=>array()));
-		$city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Three_Stars'=>array()));
-
-		$cafes = $this->rise_cafe->ListCafeByRegion(0, $cities[$i]->ID);
-
-		$stars = array(-2=>0,-1=>0,0=>0,1=>0,2=>0,3=>0);
+  		$stars = array(-2=>0,-1=>0,0=>0,1=>0,2=>0,3=>0);
     
 		foreach($cafes as $c){
 			if($c->Star_Rating>=-2 && $c->Star_Rating<=3){
@@ -147,12 +147,12 @@ public function list_cities_by_distance($lat1,$lon1){
 			}
 		}
 		
-		$city_dist[$distance]->Unconfirmed = $stars[-2];
-		$city_dist[$distance]->Black_Stars = $stars[-1];
-		$city_dist[$distance]->Zero_Stars = $stars[0];
-		$city_dist[$distance]->One_Star = $stars[1];
-		$city_dist[$distance]->Two_Stars = $stars[2];
-		$city_dist[$distance]->Three_Stars = $stars[3];
+		$city_dist[$key]->Unconfirmed = $stars[-2];
+		$city_dist[$key]->Black_Stars = $stars[-1];
+		$city_dist[$key]->Zero_Stars = $stars[0];
+		$city_dist[$key]->One_Star = $stars[1];
+		$city_dist[$key]->Two_Stars = $stars[2];
+		$city_dist[$key]->Three_Stars = $stars[3];
 	}
     ksort($city_dist);
 	return $city_dist;
