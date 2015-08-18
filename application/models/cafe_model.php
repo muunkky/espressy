@@ -291,7 +291,7 @@ public function list_cities_by_distance($lat1,$lon1){
 		$city_cafes = array();
 
 	  if($lat==0&&$lon==0){
-	    $res = $this->db->query("SELECT t_es_dev_u_Cafe.c_id as ID t_es_dev_u_Cafe.NAME as Name FROM t_es_dev_u_Cafe WHERE t_es_dev_u_Cafe.c_r_Region = $RegionID
+	    $res = $this->db->query("SELECT t_es_dev_u_Cafe.c_id as ID, t_es_dev_u_Cafe.NAME as Name FROM t_es_dev_u_Cafe WHERE t_es_dev_u_Cafe.c_r_Region = $RegionID
   		ORDER BY Distance");
 	  }else{
     	$res = $this->db->query("SELECT t_es_dev_u_Cafe.c_id as ID, ( 6371 *2 * ATAN2( SQRT( SIN( (
