@@ -67,17 +67,6 @@
 				$HM++;
 			}
 		}
-		if($HM>0){?>
-			<ul class="list-group" style="margin:0;">
-    			<li class="list-group-item star-header"><h4>Honourable Mentions</h4></li>
-      <?php
-			foreach($city_cafes as $cafe){
-	          	if($cafe->Star_Rating==0){
-	        		$this->load->view("list/cafe",array("cafe"=>$cafe,"reviewer"=>$reviewer,"stars"=>$cafe->Star_Rating,"reviewed"=>$reviewed));
-				}
-			}?>
-			</ul>
-	
-		<?php }
+		
       ?>
     </div>
