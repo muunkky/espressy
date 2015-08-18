@@ -117,7 +117,7 @@ public function list_cafes_alphabetically($date,$reviewer=false){
 
 public function list_cities_by_distance($lat1,$lon1){
 	$city_list = array();
-    $city_dist = array();
+  $city_dist = array();
 	$cities = $this->rise_cafe->ListRegion(0);
   	for($i=0;$i<count($cities);$i++){
 
@@ -127,6 +127,7 @@ public function list_cities_by_distance($lat1,$lon1){
 	        $distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
 	    }else{
 	        $distance = intval($cities[$i]->Name);
+	        print_r_pre(array($cities[$i]->Name=>$distance));
 	        $i++;
 	    }
     $city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Unconfirmed'=>array()));
