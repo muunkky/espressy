@@ -123,6 +123,7 @@ if(!$hide){?>
 					  	    	</h5>
 					  	    	<h5>
 					  	    		<?php
+					  	    			print_r_pre($s);
 					  	    			if($s->Distance == 0){?>
 					  	    			Unknown Distance
 					  	    		<?php }	else{
