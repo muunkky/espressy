@@ -128,7 +128,6 @@ public function list_cities_by_distance($lat1,$lon1){
 	    }else{
 	        $distance = intval($cities[$i]->Name);
 	        $i++;
-	        print_r_pre(array("city"=>$cities,"lat1"=>$lat1,"lat2"=>$lon1));
 	    }
     $city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Unconfirmed'=>array()));
     $city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Black_Stars'=>array()));
@@ -288,28 +287,33 @@ public function list_cities_by_distance($lat1,$lon1){
 	}
   function get_city_cafes_by_distance($lat, $lon,$RegionID,$date,$categorize_by_stars=FALSE){
   	$lat1 = deg2rad($lat);
-	$lon1 = deg2rad($lon);
-	
-  	$res = $this->db->query("SELECT t_es_dev_u_Cafe.c_id as ID, ( 6371 *2 * ATAN2( SQRT( SIN( (
-		( RADIANS(t_es_dev_u_Cafe.c_u_Latitude) -$lat1 ) /2 ) * SIN( ( RADIANS(t_es_dev_u_Cafe.c_u_Latitude) -$lat1 ) /2 ) + COS( ( $lat1 ) ) * COS( ( $lat1 ) ) * SIN( (
-		RADIANS(t_es_dev_u_Cafe.c_u_Longitude) - $lon1
-		) /2 ) * SIN( (
-		RADIANS(t_es_dev_u_Cafe.c_u_Longitude) - $lon1
-		) /2 ) ) ) , SQRT( 1 - ( SIN( ( RADIANS(t_es_dev_u_Cafe.c_u_Latitude) -$lat1 ) /2 ) * SIN( ( RADIANS(t_es_dev_u_Cafe.c_u_Latitude) -$lat1 ) /2 ) + COS( ( $lat1 ) ) * COS( ( $lat1 ) ) * SIN( (
-		RADIANS(t_es_dev_u_Cafe.c_u_Longitude) - $lon1
-		) /2 ) * SIN( (
-		RADIANS(t_es_dev_u_Cafe.c_u_Longitude) - $lon1
-		) /2 ) ) ) )
-		)
-		AS Distance
-		FROM t_es_dev_u_Cafe WHERE t_es_dev_u_Cafe.c_r_Region = $RegionID
-		ORDER BY Distance");
+  	$lon1 = deg2rad($lon);
 		$city_cafes = array();
+
+	  if($lat==0&&$lon==0){
+	    $res = $this->db->query("SELECT t_es_dev_u_Cafe.c_id as ID t_es_dev_u_Cafe.NAME as Distance FROM t_es_dev_u_Cafe WHERE t_es_dev_u_Cafe.c_r_Region = $RegionID
+  		ORDER BY Distance");
+	  }else{
+    	$res = $this->db->query("SELECT t_es_dev_u_Cafe.c_id as ID, ( 6371 *2 * ATAN2( SQRT( SIN( (
+  		( RADIANS(t_es_dev_u_Cafe.c_u_Latitude) -$lat1 ) /2 ) * SIN( ( RADIANS(t_es_dev_u_Cafe.c_u_Latitude) -$lat1 ) /2 ) + COS( ( $lat1 ) ) * COS( ( $lat1 ) ) * SIN( (
+  		RADIANS(t_es_dev_u_Cafe.c_u_Longitude) - $lon1
+  		) /2 ) * SIN( (
+  		RADIANS(t_es_dev_u_Cafe.c_u_Longitude) - $lon1
+  		) /2 ) ) ) , SQRT( 1 - ( SIN( ( RADIANS(t_es_dev_u_Cafe.c_u_Latitude) -$lat1 ) /2 ) * SIN( ( RADIANS(t_es_dev_u_Cafe.c_u_Latitude) -$lat1 ) /2 ) + COS( ( $lat1 ) ) * COS( ( $lat1 ) ) * SIN( (
+  		RADIANS(t_es_dev_u_Cafe.c_u_Longitude) - $lon1
+  		) /2 ) * SIN( (
+  		RADIANS(t_es_dev_u_Cafe.c_u_Longitude) - $lon1
+  		) /2 ) ) ) )
+  		)
+  		AS Distance
+  		FROM t_es_dev_u_Cafe WHERE t_es_dev_u_Cafe.c_r_Region = $RegionID
+  		ORDER BY Distance");
+	  }
 		
 		foreach($res->result() as $c){
 			$cafe = $this->rise_cafe->GetCafe($c->ID);
 			$cafe = (object) array_merge( (array)$cafe, array( 'Distance' => '0' ) );
-			$cafe->Distance = $c->Distance;
+			$cafe->Distance =floatval($c->Distance);
 			$cafe= (object) array_merge( (array)$cafe, array( 'Hours' => '' ) );
 			$cafe->Hours = $this->getHours($cafe, $date);
 			$cafe = (object) array_merge( (array)$cafe, array( 'Reviews' => array() ) );
