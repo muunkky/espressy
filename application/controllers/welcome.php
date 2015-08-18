@@ -92,10 +92,10 @@ class Welcome extends CI_Controller {
 			}else{
 				$reviewer = false;
 			}
-		$this->load->view('list/cities',array('cities'=>$cities,"latitude"=>$lat,"longitude"=>$long,"reviewer"=>$reviewer));
-		$city_output = $this->output->get_output();
-		$this->output->set_output(null);
-		print_r(json_encode(array("cities"=>$city_output,"error_message"=>"")));
+			$this->load->view('list/cities',array('cities'=>$cities,"latitude"=>$lat,"longitude"=>$long,"reviewer"=>$reviewer));
+			$city_output = $this->output->get_output();
+			$this->output->set_output(null);
+			print_r(json_encode(array("cities"=>$city_output,"error_message"=>"")));
 	}
 public function get_city_stars(){
 	$RegionID = $this->input->post("cityID");
