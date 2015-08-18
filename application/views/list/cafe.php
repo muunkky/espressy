@@ -123,7 +123,7 @@ if(!$hide){?>
 					  	    	</h5>
 					  	    	<h5>
 					  	    		<?php
-					  	    			if($s-Distance == 0){?>
+					  	    			if($s->Distance == 0){?>
 					  	    			Unknown Distance
 					  	    		<?php }	else{
 					  	    		echo min(round($s->Distance,1),100);
