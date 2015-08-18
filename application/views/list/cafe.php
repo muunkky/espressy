@@ -54,7 +54,13 @@ if(!$hide){?>
   	    		<?=$cafe->Hours?>
   	    	</h5>
   	    	<h5>
-  	    		<?=min(round($cafe->Distance,1),100)?><?php if($cafe->Distance>100){echo "+";}?> km away
+  	    		<?php
+	  	    		if($cafe->Distance == 0){?>
+	  	    			Unknown Distance
+	  	    		<?php }	else{
+	  	    		echo min(round($cafe->Distance,1),100);
+	  	    		echo (($cafe->Distance>100)?"+":"")." km away";
+  	    		}?>
     	  	</h5>
     	  	<?php if(count($cafe->Sisters)>0){?>
 				  	<a class="btn btn-xs" data-toggle="collapse" data-target="#<?=$cafe->ID?>_sisters" style="color:black;border:1px solid #DDD;border-radius:5px;background-color:transparent;">
