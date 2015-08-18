@@ -122,7 +122,7 @@ public function list_cities_by_distance($lat1,$lon1){
 	
   	for($i=0;$i<count($cities);$i++){
       $key = $cities[$i]->Name;
-      if($lat1==0&&$lon1==0){
+      if($lat1!=0&&$lon1!=0){
     	  $lat2 = $cities[$i]->Center_Latitude;
   	    $lon2 = $cities[$i]->Center_Longitude;
   	    $distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
