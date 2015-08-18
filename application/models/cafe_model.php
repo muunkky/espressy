@@ -127,7 +127,6 @@ public function list_cities_by_distance($lat1,$lon1){
 	        $distance = $this->get_distance($lat1,$lon1,$lat2,$lon2);
 	    }else{
 	        $distance = strcmp('a',$cities[$i]->Name);
-	        $i++;
 	    }
     $city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Unconfirmed'=>array()));
     $city_dist[$distance] = (object) array_merge((array)$cities[$i], array('Black_Stars'=>array()));
