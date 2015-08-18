@@ -139,23 +139,24 @@ public function list_cities_by_distance($lat1,$lon1){
 
   		$stars = array(-2=>0,-1=>0,0=>0,1=>0,2=>0,3=>0);
     
-		foreach($cafes as $c){
-			if($c->Star_Rating>=-2 && $c->Star_Rating<=3){
-			  $stars[$c->Star_Rating]=$stars[$c->Star_Rating]+1;
-			}else{
-			  $stars[-2]=$stars[-2]+1;
-			}
-		}
+  		foreach($cafes as $c){
+  			if($c->Star_Rating>=-2 && $c->Star_Rating<=3){
+  			  $stars[$c->Star_Rating]=$stars[$c->Star_Rating]+1;
+  			}else{
+  			  $stars[-2]=$stars[-2]+1;
+  			}
+  		}
 		
-		$city_dist[$key]->Unconfirmed = $stars[-2];
-		$city_dist[$key]->Black_Stars = $stars[-1];
-		$city_dist[$key]->Zero_Stars = $stars[0];
-		$city_dist[$key]->One_Star = $stars[1];
-		$city_dist[$key]->Two_Stars = $stars[2];
-		$city_dist[$key]->Three_Stars = $stars[3];
-	}
+  		$city_dist[$key]->Unconfirmed = $stars[-2];
+  		$city_dist[$key]->Black_Stars = $stars[-1];
+  		$city_dist[$key]->Zero_Stars = $stars[0];
+  		$city_dist[$key]->One_Star = $stars[1];
+  		$city_dist[$key]->Two_Stars = $stars[2];
+  		$city_dist[$key]->Three_Stars = $stars[3];
+  	}
+  	print_r_pre($city_dist);
     ksort($city_dist);
-	return $city_dist;
+	  return $city_dist;
 }
 // public function list_cafes_by_distance($lat1,$lon1,$date,$reviewer=false){
 //     $city_list = array();
