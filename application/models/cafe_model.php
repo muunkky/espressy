@@ -52,6 +52,8 @@ public function list_cities_alphabetically(){
 		$cities[$i] = (object) array_merge((array)$cities[$i], array('Three_Stars'=>array()));
 		$cafes = $this->rise_cafe->ListCafeByRegion(0, $cities[$i]->ID);
 		$stars = array();
+		echo "BANANA";
+		exit;
 		foreach($cafes as $c){
 		  print_r_pre($c);
 			$stars[$c->Rating]++;
