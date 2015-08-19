@@ -53,6 +53,7 @@ public function list_cities_alphabetically(){
 		$cafes = $this->rise_cafe->ListCafeByRegion(0, $cities[$i]->ID);
 		$stars = array();
 		foreach($cafes as $c){
+		  print_r_pre($c);
 			$stars[$c->Rating]++;
 		}
 		$cities[$i]->Black_Stars = $stars[-1];
